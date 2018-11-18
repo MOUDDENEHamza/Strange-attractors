@@ -1,47 +1,32 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-
+#include "../include/input.h"
 
 int main(int argc, char *argv[]){
 	/*initialiser toutes les variables*/
-	double x, y, z;
-	double dx, dy, dz;
-	double sigma, ro, beta;
+	double position[3];
+	double speed[3];
 	double dt;
 	double tmax;
         double i = 0;
 	double xt, yt ,zt;
 
-	/*initialiser et ouvrir et ecrire dans le fichier lorenz.txt*/
+	/*initialiser et ouvrir et ecrire dans le fichier lorenz.dat*/
 	FILE *f;
-	f = fopen("lorenz.txt", "w+");
-	/*fputs("temps		x		y		z\n", f);*/
-
-
-	/*input : position x y z*/
-	printf("entrez votre coordonnée x : ");
-	scanf("%lf", &x);
-	printf("entrez votre coordonnée y : ");
-        scanf("%lf", &y);
-	printf("entrez votre coordonnée z : ");
-        scanf("%lf", &z);
 	
-	/*input : paramètre σ ρ β*/
-	printf("entrez votre paramètre σ : ");
-        scanf("%lf", &sigma);
-        printf("entrez votre paramètre ρ : ");
-        scanf("%lf", &ro);
-        printf("entrez votre paramétre β : ");
-        scanf("%lf", &beta);
+	f = fopen("lorenz.dat", "w+");
+	fputs("temps		x		y		z\n", f);
+	
+	/*input: coordonnées initiales*/
+	coordinates(position);
+        fprintf(f, "%lf	%lf	%lf	%lf\n", i, position[0], position[1], position[2]);
 	
 	/*calcul et affichage de la vitesse dx dy dz*/
-	dx = sigma * (y - x);
-        dy = x * (ro - z) -y;
-        dz = x * y - beta * z;
-        printf("dx = %lf \n", dx);
-        printf("dy = %lf \n", dy);
-        printf("dz = %lf \n", dz);
+	speed[0] = sigma * (position[1] - position[0]);
+        speed[1] = position[0] * (rho - position[2]) -position[1];
+        speed[2] = position[0] * position[1] - beta * position[2];
+        printf("dx = %lf \n", speed[0]);
+        printf("dy = %lf \n", speed[1]);
+        printf("dz = %lf \n", speed[2]);
 	
 	/*input : incrément*/
 	printf("entrez votre incrément dt : ");
@@ -52,20 +37,22 @@ int main(int argc, char *argv[]){
         scanf("%lf", &tmax);
 	
 	/*calcul et affichage de la position x y z entre t = 0 et Tmax*/
-        for(i; i <= tmax; i += dt){
-
-                xt = x + (sigma * ( y - x)) * dt;
-                yt = y + (x * (ro - z) - y) * dt;
-                zt = z + (x * y - beta * z) * dt;
-		x = xt;
-    		y = yt;
-    		z = zt;
+        /*for(i = dt; i <= tmax; i += dt){*/
+	i = dt;
+	do{
+                xt = position[0] + (sigma * ( position[1] - position[0])) * dt;
+                yt = position[1] + (position[0] * (rho - position[2]) - position[1]) * dt;
+                zt = position[2] + (position[0] * position[1] - beta * position[2]) * dt;
+		position[0] = xt;
+    		position[1] = yt;
+    		position[2] = zt;
          	printf("temps		x		y		z\n");
-	 	printf("%lf	%lf      %lf      %lf\n", i, x, y, z);
-		fprintf(f, "%lf	%lf	%lf	%lf\n", i, x, y, z);
-	}
+	 	printf("%lf	%lf      %lf      %lf\n", i, position[0], position[1], position[2]);
+		fprintf(f, "%lf	%lf	%lf	%lf\n", i, position[0], position[1], position[2]);
+		i += dt;
+	}while(i <= tmax);
 	
-	/*fermer le ficher lorenz.txt*/
+	/*fermer le ficher lorenz.dat*/
 	fclose(f);
 	
 	return 0;
