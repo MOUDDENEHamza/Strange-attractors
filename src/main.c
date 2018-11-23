@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../include/input.h"
+#include "input.h"
 
 int main(int argc, char *argv[]){
 	/*initialiser toutes les variables*/
