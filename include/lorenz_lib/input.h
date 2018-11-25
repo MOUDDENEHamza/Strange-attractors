@@ -1,16 +1,18 @@
 #ifndef _INPUT_H_
 #define _INPUT_H_
 
-/*input : coordonnees x, y, z*/
+#include "structure.h"
+
+/*input : initial coordinates x, y, z*/
 void coordinates(double position[]);
 
-/*input : constantes σ, ρ, β*/ 
+/*input : constants σ, ρ, β*/ 
 void  constants(double *sigma, double *rho, double *beta);
 
-/*input : incrément*/
+/*input : increment dt*/
 void increment(double *dt);
 
-/*input : temps d'arret Tmax*/
+/*input : break time Tmax*/
 void break_time(double *tmax, double *dt);
 
 #endif
