@@ -3,6 +3,10 @@
 #include "input.h"
 #include "file.h"
 #include "gnuplot.h"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4f526fdc1eff11a7a7380cf20e69a0cb137160b0
 #include "displayShell.h"
 #include "structure.h"
 
@@ -55,5 +59,33 @@ int main(int argc, char* argv[]){
 	/*display : the end bar*/
         display_end();
 
+<<<<<<< HEAD
+=======
+=======
+
+int main(int argc, char* argv[]){
+	double g;
+	double l;
+	double gamma;
+	double m;
+	double dt;
+	double position[2];
+	double tmax;
+	
+
+	initial_coordinates(position);
+	constants(&g, &l, &gamma, &m);
+	time(&tmax, &dt);
+
+
+	initial_speed(position, &g, &l, &gamma, &m);
+
+	for (double i=0; i<tmax; i+=dt){
+		coordinates(position, &g, &l, &gamma, &m, &dt);
+		file(position, &i);
+	}
+	gnuplot();
+>>>>>>> 5a0df479aff02daaf2b9f78329f3e84130949a40
+>>>>>>> 4f526fdc1eff11a7a7380cf20e69a0cb137160b0
 	return 0;
 }
