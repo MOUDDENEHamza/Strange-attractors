@@ -1,34 +1,34 @@
 #include <stdio.h>
 #include "input.h"
 
-/*input : coordonnees x, y, z*/
+/*input : initial coordinates x, y, z*/
 void coordinates(double position[]){
-	printf("entrez la coordonnée x : ");
+	printf("type the coordinate x : ");
         scanf("%lf", &position[0]);
-        printf("entrez la coordonnée y : ");
+        printf("type the coordinate y : ");
         scanf("%lf", &position[1]);
-        printf("entrez la coordonnée z : ");
+        printf("type the coordinate z : ");
         scanf("%lf", &position[2]);
 }
 
-/*input : constantes σ, ρ, β*/ 
+/*input : constants σ, ρ, β*/ 
 void  constants(double *sigma, double *rho, double *beta){
-	printf("entrez σ : ");
+	printf("type σ : ");
 	scanf("%lf", sigma);
-        printf("entrez ρ : ");
+        printf("type ρ : ");
         scanf("%lf", rho);
-        printf("entrez β : ");
+        printf("type β : ");
         scanf("%lf", beta);
 }
 
-/*input : incrément*/
+/*input : increment dt*/
 void increment(double *dt){
         while(1){
-		printf("entrez l'incrément dt : ");
+		printf("type the increment dt : ");
                 scanf("%lf", dt);
 		/*erreur : l'incrément est nul ou négatif*/
 		if(*dt <= 0){
-			printf("l'incrément est incorrect, réessayez encore.\n");
+			printf("the increment is incorrect, please try again.\n");
 			continue;
 		}
 		return;
@@ -36,14 +36,14 @@ void increment(double *dt){
 	
 }
 
-/*input : temps d'arret Tmax*/
+/*input : break time Tmax*/
 void break_time(double *tmax, double *dt){
 	while(1){
-        	printf("entrez le temps d'arret Tmax : ");
+        	printf("type the break time Tmax : ");
 		scanf("%lf", tmax);
 		/*erreur : le temps d'arret est inférieur a dt*/
 		if(*tmax <= *dt){
-			printf("le temps d'arret est incorrect, réessayer encore.\n");
+			printf("the break time is incorrect, please try again.\n");
                 	continue;
                 }
         	return;
