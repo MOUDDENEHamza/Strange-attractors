@@ -38,7 +38,11 @@ int main(int argc, char *argv[]){
 	display_coordinates(p.position, &i);
 	
 	/*initialize file, update position, write to file then close it*/
+<<<<<<< HEAD
 	file(p.position, p.speed,  &i);
+=======
+	file(p.position, &i);
+>>>>>>> 5a0df479aff02daaf2b9f78329f3e84130949a40
 
 	for(i = dt;i <= tmax; i += dt){
 		/*calcul : the new position at every moment t*/
@@ -46,8 +50,13 @@ int main(int argc, char *argv[]){
 		/*display : the new position at every moment t*/
 		display_coordinates(p.position, &i);
 		/*write to file the new position at every moment t then close it*/
+<<<<<<< HEAD
 		file(p.position, p.speed_t, &i);
 		/*file(p.speed_t, &i);*/
+=======
+		file(p.position, &i);
+		file(p.speed_t, &i);
+>>>>>>> 5a0df479aff02daaf2b9f78329f3e84130949a40
 	}
 
 	/*run : lunch gnuplot from main.c*/

@@ -1,6 +1,7 @@
 #ifndef _INPUT_H_
 #define _INPUT_H_
 
+<<<<<<< HEAD
 #include "structure.h"
 
 
@@ -15,6 +16,16 @@ void increment(double *dt);
 
 /*input : break time Tmax*/
 void break_time(double *tmax, double *dt);
+=======
+
+void constants(double *g, double *l, double *gamma, double *m);
+
+
+void initial_coordinates(double position[]);
+
+
+void time(double *tmax, double *dt);
+>>>>>>> 5a0df479aff02daaf2b9f78329f3e84130949a40
 
 
 #endif

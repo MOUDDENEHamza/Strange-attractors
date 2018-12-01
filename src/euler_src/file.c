@@ -2,6 +2,7 @@
 #include "file.h"
 
 /*initialize file, update position, write to file then close it*/
+<<<<<<< HEAD
 void file(double position[], double speed_t[], double *i){
 	FILE *f, *F;
 	f = fopen("euler_coordinates.dat", "a+");
@@ -11,5 +12,12 @@ void file(double position[], double speed_t[], double *i){
 	fclose(f);
 	fclose(F);
 
+=======
+void file(double position[], double *i){
+	FILE *f;
+	f = fopen("euler.dat", "a+");
+	fprintf(f, "%lf %lf	%lf\n", *i, position[0], position[1]);
+	fclose(f);
+>>>>>>> 5a0df479aff02daaf2b9f78329f3e84130949a40
 	return;
 }
