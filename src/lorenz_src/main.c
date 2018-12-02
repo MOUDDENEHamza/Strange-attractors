@@ -11,7 +11,7 @@ int main(int argc, char *argv[]){
 	/*initialize all variables*/
 	double dt;
 	double tmax;
-        double i = 0;
+        double i;
 	
 	/*display : the init bar with the dynamic system that will be used*/
 	display_init();
@@ -38,34 +38,15 @@ int main(int argc, char *argv[]){
 	display_coordinates(p.position, &i);
 	
 	/*initialize file, update position, write to file then close it*/
-<<<<<<< HEAD
-	file(p.position, p.speed,  &i);
-=======
-<<<<<<< HEAD
-	file(p.position, p.speed,  &i);
-=======
-	file(p.position, &i);
->>>>>>> 5a0df479aff02daaf2b9f78329f3e84130949a40
->>>>>>> 4f526fdc1eff11a7a7380cf20e69a0cb137160b0
+	/*file(p.position, p.speed,  &i);*/
 
-	for(i = dt;i <= tmax; i += dt){
+	for(i = 0;i <= tmax; i += dt){
 		/*calcul : the new position at every moment t*/
 		instant_speed(p.speed_t, p.speed, p.position, &para.sigma, &para.rho, &para.beta, &dt);
 		/*display : the new position at every moment t*/
 		display_coordinates(p.position, &i);
 		/*write to file the new position at every moment t then close it*/
-<<<<<<< HEAD
 		file(p.position, p.speed_t, &i);
-		/*file(p.speed_t, &i);*/
-=======
-<<<<<<< HEAD
-		file(p.position, p.speed_t, &i);
-		/*file(p.speed_t, &i);*/
-=======
-		file(p.position, &i);
-		file(p.speed_t, &i);
->>>>>>> 5a0df479aff02daaf2b9f78329f3e84130949a40
->>>>>>> 4f526fdc1eff11a7a7380cf20e69a0cb137160b0
 	}
 
 	/*run : lunch gnuplot from main.c*/
