@@ -1,10 +1,6 @@
 #include <stdio.h>
 #include "input.h"
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 4f526fdc1eff11a7a7380cf20e69a0cb137160b0
 /*input : initial coordinates; α is the pendulum tilt angle, β is the angular vitesse*/
 void coordinates(double position[]){
         printf("enter α : ");
@@ -54,37 +50,6 @@ void break_time(double *tmax, double *dt){
         }
 }
 
-<<<<<<< HEAD
-=======
-=======
-
-void constants(double *g, double *l, double *gamma, double *m){
-	printf("entrez g : ");
-	scanf("%lf", g);
-	printf("entrez l : ");
-	scanf("%lf", l);
-	printf("entrez gamma : ");
-        scanf("%lf", gamma);
-	printf("entrez m : ");
-	scanf("%lf", m);
-}
-
-void initial_coordinates(double position[]){
-	printf("entrez alpha : ");
-       	scanf("%lf", &position[0]);
-	printf("entrez beta : ");
-	scanf("%lf", &position[1]);
-}
-
-
-void time(double *tmax, double *dt){
-	printf("entrez tmax : ");
-	scanf("%lf", tmax);
-	printf("entrez dt : ");
-	scanf("%lf", dt);
-}
->>>>>>> 5a0df479aff02daaf2b9f78329f3e84130949a40
->>>>>>> 4f526fdc1eff11a7a7380cf20e69a0cb137160b0
 
 
 
