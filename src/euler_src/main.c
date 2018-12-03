@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "euler.h"
-#include "input.h"
+#include "input_euler.h"
 #include "file_euler.h"
 #include "gnuplot_euler.h"
 #include "displayShell_euler.h"

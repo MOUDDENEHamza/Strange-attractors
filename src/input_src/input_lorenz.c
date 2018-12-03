@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "input.h"
+#include "input_lorenz.h"
 
 /*input : initial coordinates x, y, z*/
 void coordinates(double position[]){

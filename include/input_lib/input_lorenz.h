@@ -1,5 +1,5 @@
-#ifndef _INPUT_H_
-#define _INPUT_H_
+#ifndef _INPUT_LORENZ_H_
+#define _INPUT_LORENZ_H_
 
 #include "struct_lorenz.h"
 

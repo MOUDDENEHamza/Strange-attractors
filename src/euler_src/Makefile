@@ -1,7 +1,7 @@
-compile : main.c input.c
-	gcc -I ../../include/euler_lib -I ../../include/calcul_lib -I ../../include/displayShell_lib -I ../../include/file_lib -I ../../include/gnuplot_lib  -c *.c
+compile : main.c
+	gcc -I ../../include/euler_lib -I ../../include/calcul_lib -I ../../include/displayShell_lib -I ../../include/file_lib -I ../../include/gnuplot_lib -I ../../include/input_lib  -c *.c
 	mv euler.o ../../lib/
-	mv ./input.o ../../lib/
+	mv ./input_euler.o ../../lib/
 	mv ./main.o ../../lib/
 	mv ./gnuplot_euler.o ../../lib/
 	mv ./file_euler.o ../../lib/
@@ -11,5 +11,5 @@ compile : main.c input.c
 run : main.c
 	../../bin/euler
 
-clean:
-	rm *.o ../../bin/* ../../lib/* ./*.dat
+clean :
+	rm ../../bin/* ../../lib/* ./*.dat

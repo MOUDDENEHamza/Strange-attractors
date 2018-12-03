@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "input.h"
+#include "input_euler.h"
 
 /*input : initial coordinates; α is the pendulum tilt angle, β is the angular vitesse*/
 void coordinates(double position[]){

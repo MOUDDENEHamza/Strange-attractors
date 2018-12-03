@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "input.h"
+#include "input_lorenz.h"
 #include "lorenz.h"
 #include "gnuplot_lorenz.h"
 #include "file_lorenz.h"
