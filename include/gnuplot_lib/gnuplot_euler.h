@@ -1,5 +1,5 @@
-#ifndef _GNUPLOT_H_
-#define _GNUPLOT_H_
+#ifndef _GNUPLOT_EULER_H_
+#define _GNUPLOT_EULER_H_
 
 
 /*launch gnuplot from c programm and draw the curve with the position points*/

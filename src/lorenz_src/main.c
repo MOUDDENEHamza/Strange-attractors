@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "input.h"
 #include "lorenz.h"
-#include "gnuplot.h"
-#include "file.h"
+#include "gnuplot_lorenz.h"
+#include "file_lorenz.h"
 #include "displayShell_lorenz.h"
 #include "struct_lorenz.h"
 

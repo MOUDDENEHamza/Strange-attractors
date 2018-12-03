@@ -1,5 +1,5 @@
-#ifndef _GNUPLOT_H_
-#define _GNUPLOT_H_
+#ifndef _GNUPLOT_LORENZ_H_
+#define _GNUPLOT_LORENZ_H_
 
 /*lunch gnuplot from c programm and display just with points*/
 void gnuplot_point();

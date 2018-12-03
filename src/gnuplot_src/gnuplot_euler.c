@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "gnuplot.h"
+#include "gnuplot_euler.h"
 
 /*lunch gnuplot from c programm*/
 void gnuplot_point(){

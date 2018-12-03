@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "file.h"
+#include "file_lorenz.h"
 
 /*initialize file, update position, write to file then close it*/
 void file(double position[], double speed_t[], double *i){

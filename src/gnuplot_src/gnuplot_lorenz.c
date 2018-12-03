@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "gnuplot.h"
+#include "gnuplot_lorenz.h"
 
 /*lunch gnuplot from c programm and display just points*/
 void gnuplot_point(){

@@ -2,7 +2,7 @@
 #include "euler.h"
 #include "input.h"
 #include "file_euler.h"
-#include "gnuplot.h"
+#include "gnuplot_euler.h"
 #include "displayShell_euler.h"
 #include "struct_euler.h"
 
