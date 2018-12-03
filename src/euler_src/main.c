@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "euler.h"
 #include "input.h"
-#include "file.h"
+#include "file_euler.h"
 #include "gnuplot.h"
 #include "displayShell_euler.h"
 #include "struct_euler.h"
