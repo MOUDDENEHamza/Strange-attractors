@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../../include/calcul_lib/euler.h"
+#include "euler.h"
 #include "input.h"
 #include "file.h"
 #include "gnuplot.h"

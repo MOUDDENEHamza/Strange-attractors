@@ -3,7 +3,6 @@
 
 #include "struct_euler.h"
 
-
 /*input : initial coordinates; α is the pendulum tilt angle, β is the angular vitesse*/
 void coordinates(double position[]);
 
@@ -15,6 +14,5 @@ void increment(double *dt);
 
 /*input : break time Tmax*/
 void break_time(double *tmax, double *dt);
-
 
 #endif

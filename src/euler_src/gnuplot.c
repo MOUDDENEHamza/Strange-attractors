@@ -17,4 +17,3 @@ void gnuplot_vector(){
         pclose(pipe);
         return;
 }
-

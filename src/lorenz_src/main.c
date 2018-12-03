@@ -47,7 +47,6 @@ int main(int argc, char *argv[]){
 		display_coordinates(p.position, &i);
 		/*write to file the new position at every moment t then close it*/
 		file(p.position, p.speed_t, &i);
-		/*file(p.speed_t, &i);*/
 	}
 
 	/*run : lunch gnuplot from main.c*/
