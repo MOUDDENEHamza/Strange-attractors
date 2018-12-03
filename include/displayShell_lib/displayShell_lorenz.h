@@ -1,7 +1,7 @@
-#ifndef _DISPLAYSHELL_H_
-#define _DISPLAYSHELL_H_
+#ifndef _DISPLAYSHELL_LORENZ_H_
+#define _DISPLAYSHELL_LORENZ_H_
 
-#include "structure.h"
+#include "struct_lorenz.h"
 
 /*display : the init bar with the dynamic system that will be used*/
 void display_init();

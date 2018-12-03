@@ -1,7 +1,7 @@
 #ifndef _INPUT_H_
 #define _INPUT_H_
 
-#include "structure.h"
+#include "struct_lorenz.h"
 
 /*input : initial coordinates x, y, z*/
 void coordinates(double position[]);

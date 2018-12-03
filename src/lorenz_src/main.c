@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include "input.h"
-#include "calcul.h"
+#include "lorenz.h"
 #include "gnuplot.h"
 #include "file.h"
-#include "displayShell.h"
-#include "structure.h"
+#include "displayShell_lorenz.h"
+#include "struct_lorenz.h"
 
 /*main function : Lorenz system */
 int main(int argc, char *argv[]){

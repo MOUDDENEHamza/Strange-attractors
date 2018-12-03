@@ -1,5 +1,5 @@
-#ifndef _DISPLAYSHELL_H_
-#define _DISPLAYSHELL_H_
+#ifndef _DISPLAYSHELL_EULER_H_
+#define _DISPLAYSHELL_EULER_H_
 
 #include "struct_euler.h"
 

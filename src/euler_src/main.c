@@ -3,7 +3,7 @@
 #include "input.h"
 #include "file.h"
 #include "gnuplot.h"
-#include "displayShell.h"
+#include "displayShell_euler.h"
 #include "struct_euler.h"
 
 /*main function : euler system */

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "displayShell.h"
+#include "displayShell_lorenz.h"
 
 /*display : the init bar with the dynamic system that will be used*/
 void display_init(){
