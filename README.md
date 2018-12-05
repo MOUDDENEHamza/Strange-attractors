@@ -15,9 +15,7 @@ If you don't have make package, you can install it by typing:
 after installing this package, you can launch the programm by typing:
 
 		cd src/main_src/
-		make build
-		make compile
-		make run
+		make all
 
 to remove the file.o and executable file, you need to type :
 	
