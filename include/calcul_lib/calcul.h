@@ -4,9 +4,9 @@
 #include "struct.h"
 
 /*calcul : initial speed dx dy dz*/
-void initial_speed(double speed[], double position[], double *sigma, double *rho, double *beta, double *g, double *l, double *gamma, double *m, int *flag);
+void initial_speed(double speed[], double position[], double *sigma, double *rho, double *beta, double *g, double *l, double *gamma, double *m, char flag[]);
 
 /*calcul : speed at each moment t*/
-void instant_speed(double speed_t[], double speed[], double position[], double *sigma, double *rho, double *beta, double *g, double *l, double *gamma, double *m, double *dt, int *flag);
+void instant_speed(double speed_t[], double speed[], double position[], double *sigma, double *rho, double *beta, double *g, double *l, double *gamma, double *m, double *dt, char flag[]);
 
 #endif

@@ -6,13 +6,13 @@
 void launch_programm();
 
 /*display : the init bar with the dynamic system that will be used*/
-void display_init(int *flag);
+void display_init(char flag[]);
 
 /*display : initial speed*/
-void display_speed(double speed[], int *flag);
+void display_speed(double speed[], char flag[]);
 
 /*display : the coordinates that will be stored in lorenz.dat*/
-void display_coordinates(double position[],double *i, int *flag);
+void display_coordinates(double position[],double *i, char flag[]);
 
 /*display : the end bar*/
 void display_end();

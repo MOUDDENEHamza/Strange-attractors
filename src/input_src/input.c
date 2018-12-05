@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <string.h>
 #include "input.h"
+#include "string.h"
 
 /*the user has to choose between dynamic systeme by typing 1(lorenz system) or 2(euler system)*/
-void type_flag(int *flag){
+void type_flag(char flag[]){
 	while(1){
-                scanf("%d", flag);
+                scanf("%s", flag);
                 /*error : the flag  is incorrect*/
-                if(*flag != 1 && *flag != 2){
+                if(strcmp(flag,"1") != 0 && strcmp(flag,"2") != 0){
                         printf("error : you can type only 1 or 2, please try again.\nyou choose : ");
                         continue;
                 }
@@ -31,8 +32,8 @@ void default_parameters(char by_default[]){
 
 
 /*input : initial coordinates; α is the pendulum tilt angle, β is the angular speed*/
-void coordinates(double position[], int *flag, char by_default[]){
-	if (*flag == 1){
+void coordinates(double position[], char flag[], char by_default[]){
+	if (strcmp(flag,"1") == 0){
 		if (strcmp(by_default,"yes") == 0){
 			position[0] = 1;
 			position[1] = 2;
@@ -47,7 +48,7 @@ void coordinates(double position[], int *flag, char by_default[]){
 			scanf("%lf", &position[2]);
 		}
 	}	
-	if (*flag == 2){ 
+	if (strcmp(flag,"2") == 0){ 
 	 	if (strcmp(by_default,"yes") == 0){
                         position[0] = 0;
                         position[1] = 2;
@@ -63,8 +64,8 @@ void coordinates(double position[], int *flag, char by_default[]){
 }
 
 /*input : constants; g is the gravity field, l is the wire length, γ is the coefficient of friction , m is the mass*/
-void constants(double *sigma, double *rho, double *beta, double *g, double *l, double *gamma, double *m, int *flag, char by_default[]){
-	if (*flag == 1){
+void constants(double *sigma, double *rho, double *beta, double *g, double *l, double *gamma, double *m, char flag[], char by_default[]){
+	if (strcmp(flag,"1") == 0){
 		if (strcmp(by_default,"yes") == 0){
                         *sigma = 10;
                         *rho = 28;
@@ -79,7 +80,7 @@ void constants(double *sigma, double *rho, double *beta, double *g, double *l, d
 		scanf("%lf", beta);	
 		}
 	}	
-	if (*flag == 2){ 
+	if (strcmp(flag,"2") == 0){ 
 		if (strcmp(by_default,"yes") == 0){
                         *g = 1;
                         *l = 1;
