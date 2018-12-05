@@ -10,22 +10,26 @@
 int main(int argc, char *argv[]){
 	/*initialize all variables*/
 	int flag;
+	char by_default[255];
         double i = 0;
-
+	
+	/*ask the user to choose one dynamic system*/
 	launch_programm();
-
-	/*the user has to choice one systeme by typing 1(lorenz system) or 2(euler system)*/ 
-	scanf("%d", &flag);
+	
+	/*ask user to choose the dynamic system by typing 1 or 2*/
+	type_flag(&flag);
 
 	/*display : the init bar with the dynamic system that will be used*/
         display_init(&flag);
-
+	
+	/*ask user if he wants to execute the programm with default setting*/
+	default_parameters(by_default);
 
 	/*input : initial coordinates x, y, z*/
-	coordinates(p.position, &flag);
+	coordinates(p.position, &flag, by_default);
 
 	/*input : constants σ, ρ, β*/
-	constants(&para.sigma, &para.rho, &para.beta, &para.g, &para.l, &para.gamma, &para.m, &flag);
+	constants(&para.sigma, &para.rho, &para.beta, &para.g, &para.l, &para.gamma, &para.m, &flag, by_default);
 
 	/*calculation and display of speed dx dy dz*/
 	initial_speed(p.speed, p.position, &para.sigma, &para.rho, &para.beta, &para.g, &para.l, &para.gamma, &para.m, &flag);
@@ -44,7 +48,8 @@ int main(int argc, char *argv[]){
 	
 	/*initialize file, update position, write to file then close it*/
 	file(p.position, p.speed_t,  &i, &flag);
-
+	
+	/*main loop : calculation of instant speed and coordinates at every t instant, then I write this data into the file*/
 	for(i = p.dt;i <= p.tmax; i += p.dt){
 		/*calcul : the new position at every moment t*/
 		instant_speed(p.speed_t, p.speed, p.position, &para.sigma, &para.rho, &para.beta, &para.g, &para.l, &para.gamma, &para.m, &p.dt, &flag);
@@ -55,8 +60,8 @@ int main(int argc, char *argv[]){
 	}
 
 	/*run : lunch gnuplot from main.c*/
-	gnuplot_point(&flag);
-	gnuplot_vector(&flag);
+	gnuplot_point(&flag);//draw the curve by displaying only the coordinates
+	gnuplot_vector(&flag);//draw the curve by displaying only the vectors
 	
 	/*display : the end bar*/
 	display_end();

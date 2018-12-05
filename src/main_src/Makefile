@@ -1,3 +1,8 @@
+all : 
+	make build
+	make compile
+	make run
+
 build : 
 	cd ../calcul_src/ && make compile
 	cd ../displayShell_src/ && make compile
