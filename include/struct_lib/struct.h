@@ -19,6 +19,12 @@ struct parameter{
 	double l;
 	double gamma;
 	double m;
+	double a;
+	double b;
+	double c;
+	double d;
+	double e;
+	double f;
 }para;
 
 #endif

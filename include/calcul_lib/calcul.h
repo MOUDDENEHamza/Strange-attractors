@@ -7,6 +7,6 @@
 void initial_speed(double speed[], double position[], double *sigma, double *rho, double *beta, double *g, double *l, double *gamma, double *m, char flag[]);
 
 /*calcul : speed at each moment t*/
-void instant_speed(double speed_t[], double speed[], double position[], double *sigma, double *rho, double *beta, double *g, double *l, double *gamma, double *m, double *dt, char flag[]);
+void instant_speed(double speed_t[], double speed[], double position[], double *sigma, double *rho, double *beta, double *g, double *l, double *gamma, double *m, double *a, double *b, double *c, double *d, double *e, double *f,  double *dt, char flag[]);
 
 #endif

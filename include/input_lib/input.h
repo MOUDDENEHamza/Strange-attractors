@@ -12,7 +12,7 @@ void default_parameters(char by_default[]);
 void coordinates(double position[], char flag[], char by_default[]);
 
 /*input : constants; g is the gravity field, l is the wire length, γ is the coefficient of friction , m is the mass*/
-void constants(double *sigma, double *rho, double *beta, double *g, double *l, double *gamma, double *m, char flag[], char by_default[]);
+void constants(double *sigma, double *rho, double *beta, double *g, double *l, double *gamma, double *m, double *a, double *b, double *c, double *d,  double *e, double *f, char flag[], char by_default[]);
 
 /*input : increment dt*/
 void increment(double *dt);

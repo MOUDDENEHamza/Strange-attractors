@@ -8,6 +8,7 @@ void launch_programm(){
         printf("there are two dynamic system, to execute :\n");
         printf("Lorenz systeme type 1.\n");
         printf("Euler systeme type 2.\n");
+	printf("Aizawa systeme type 3.\n");
         printf("you choose : ");
 	return;
 }
@@ -15,11 +16,14 @@ void launch_programm(){
 /*display : the init bar with the choosen dynamic system that will be used*/
 void display_init(char flag[]){
 	if (strcmp(flag,"1") == 0){//init : Lorenz system
-		printf("****************init : lorenz system***************************\n");
+		printf("****************init : LORENZ system***************************\n");
 	}
 	if (strcmp(flag,"2") == 0){//init : Euler system
-		printf("****************init : euler system***************************\n");
+		printf("****************init : EULER system***************************\n");
 	}
+	if (strcmp(flag,"3") == 0){//init : Euler system
+                printf("****************init : AIZAWA system***************************\n");
+        }
 	return;
 }
 
@@ -39,7 +43,7 @@ void display_speed(double speed[], char flag[]){
 
 /*display : the coordinates that will be stored in choosen dynamic_system files*/
 void display_coordinates(double position[], double *i, char flag[]){
-	if (strcmp(flag,"1") == 0){//print the coordinates of Lorenz system into the shell of time, x, y, z. 
+	if (strcmp(flag,"1") == 0 || strcmp(flag,"3") == 0){//print the coordinates of Lorenz system into the shell of time, x, y, z. 
 		printf("time           x               y               z\n");
 		printf("%lf     %lf      %lf      %lf\n", *i, position[0], position[1], position[2]);
 	}

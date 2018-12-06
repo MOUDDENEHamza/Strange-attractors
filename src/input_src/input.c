@@ -8,7 +8,7 @@ void type_flag(char flag[]){
 	while(1){
                 scanf("%s", flag);
                 /*error : the flag  is incorrect*/
-                if(strcmp(flag,"1") != 0 && strcmp(flag,"2") != 0){
+                if(strcmp(flag,"1") != 0 && strcmp(flag,"2") != 0 && strcmp(flag,"3") != 0){
                         printf("error : you can type only 1 or 2, please try again.\nyou choose : ");
                         continue;
                 }
@@ -60,11 +60,26 @@ void coordinates(double position[], char flag[], char by_default[]){
 		scanf("%lf", &position[1]);
 		}
 	}
+	if (strcmp(flag,"3") == 0){
+                if (strcmp(by_default,"yes") == 0){
+                        position[0] = 0.1;
+                        position[1] = 0;
+                        position[2] = 0;
+                }
+                else{
+                        printf("type the coordinate x : ");
+                        scanf("%lf", &position[0]);
+                        printf("type the coordinate y : ");
+                        scanf("%lf", &position[1]);
+                        printf("type the coordinate z : ");
+                        scanf("%lf", &position[2]);
+                }
+        }
 	return;
 }
 
 /*input : constants; g is the gravity field, l is the wire length, γ is the coefficient of friction , m is the mass*/
-void constants(double *sigma, double *rho, double *beta, double *g, double *l, double *gamma, double *m, char flag[], char by_default[]){
+void constants(double *sigma, double *rho, double *beta, double *g, double *l, double *gamma, double *m, double *a, double *b, double *c, double *d, double *e, double *f, char flag[], char by_default[]){
 	if (strcmp(flag,"1") == 0){
 		if (strcmp(by_default,"yes") == 0){
                         *sigma = 10;
@@ -98,6 +113,30 @@ void constants(double *sigma, double *rho, double *beta, double *g, double *l, d
 		scanf("%lf", m);
 		}
 	}
+	if (strcmp(flag,"3") == 0){
+                if (strcmp(by_default,"yes") == 0){
+                        *a = 0.95;
+		       	*b = 0.7;
+		       	*c = 0.6;
+		       	*d = 3.5;
+		       	*e = 0.25; 
+			*f = 0.1;
+                }
+                else{
+                printf("type a : ");
+                scanf("%lf", a);
+                printf("type b : ");
+                scanf("%lf", b);
+                printf("type c : ");
+                scanf("%lf", c);
+		printf("type d : ");
+                scanf("%lf", d);
+                printf("type e : ");
+                scanf("%lf", e);
+                printf("type f : ");
+                scanf("%lf", f);
+                }
+        }
 	return;
 }
 

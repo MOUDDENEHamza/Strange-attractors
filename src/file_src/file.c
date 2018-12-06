@@ -17,6 +17,12 @@ void file(double position[], double speed_t[], double *i, char flag[]){
 		fprintf(f, "%lf %lf	%lf\n", *i, position[0], position[1]);
 		fprintf(F, "%lf %lf     %lf	%lf	%lf\n", *i, speed_t[0], speed_t[1], speed_t[0] + 0.5, speed_t[1] + 0.5);
 	}
+	if (strcmp(flag,"3") == 0){//put the data into Lorenz system files
+                f = fopen("aizawa_coordinates.dat", "a+");
+                F = fopen("aizawa_vector.dat", "a+");
+                fprintf(f, "%lf %lf     %lf     %lf\n", *i, position[0], position[1], position[2]);
+                fprintf(F, "%lf %lf     %lf     %lf     %lf     %lf     %lf\n", *i, speed_t[0], speed_t[1], speed_t[2], speed_t[0] + 0.5, speed_t[1] + 0.5, speed_t[2] + 0.5);
+        }
 	fclose(f);
 	fclose(F);
 	return;
