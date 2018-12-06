@@ -79,62 +79,62 @@ void coordinates(double position[], char flag[], char by_default[]){
 }
 
 /*input : constants; g is the gravity field, l is the wire length, γ is the coefficient of friction , m is the mass*/
-void constants(double *sigma, double *rho, double *beta, double *g, double *l, double *gamma, double *m, double *a, double *b, double *c, double *d, double *e, double *f, char flag[], char by_default[]){
+void constants(double parameter[], char flag[], char by_default[]){
 	if (strcmp(flag,"1") == 0){
 		if (strcmp(by_default,"yes") == 0){
-                        *sigma = 10;
-                        *rho = 28;
-                        *beta = 2.66;
+                        parameter[0] = 10;
+                        parameter[1] = 28;
+                        parameter[2] = 2.66;
                 }
                 else{
 		printf("type σ : ");
-		scanf("%lf", sigma);
+		scanf("%lf", &parameter[0]);
 		printf("type ρ : ");
-		scanf("%lf", rho);
+		scanf("%lf", &parameter[1]);
 		printf("type β : ");
-		scanf("%lf", beta);	
+		scanf("%lf", &parameter[0]);	
 		}
 	}	
 	if (strcmp(flag,"2") == 0){ 
 		if (strcmp(by_default,"yes") == 0){
-                        *g = 1;
-                        *l = 1;
-                        *gamma = 0.2;
-			*m = 1;
+                        parameter[0] = 1;
+                        parameter[1] = 1;
+                        parameter[2] = 0.2;
+			parameter[3] = 1;
                 }
 		else{	
 		printf("enter g : ");
-		scanf("%lf", g);
+		scanf("%lf", &parameter[0]);
 		printf("enter l : ");
-		scanf("%lf", l);
+		scanf("%lf", &parameter[1]);
 		printf("enter γ : ");
-		scanf("%lf", gamma);
+		scanf("%lf", &parameter[2]);
 		printf("enter m : ");
-		scanf("%lf", m);
+		scanf("%lf", &parameter[3]);
 		}
 	}
 	if (strcmp(flag,"3") == 0){
                 if (strcmp(by_default,"yes") == 0){
-                        *a = 0.95;
-		       	*b = 0.7;
-		       	*c = 0.6;
-		       	*d = 3.5;
-		       	*e = 0.25; 
-			*f = 0.1;
+                        parameter[0] = 0.95;
+		       	parameter[1] = 0.7;
+		       	parameter[2] = 0.6;
+		       	parameter[3] = 3.5;
+		       	parameter[4] = 0.25; 
+			parameter[5] = 0.1;
                 }
                 else{
                 printf("type a : ");
-                scanf("%lf", a);
+                scanf("%lf", &parameter[0]);
                 printf("type b : ");
-                scanf("%lf", b);
+                scanf("%lf", &parameter[1]);
                 printf("type c : ");
-                scanf("%lf", c);
+                scanf("%lf", &parameter[2]);
 		printf("type d : ");
-                scanf("%lf", d);
+                scanf("%lf", &parameter[3]);
                 printf("type e : ");
-                scanf("%lf", e);
+                scanf("%lf", &parameter[4]);
                 printf("type f : ");
-                scanf("%lf", f);
+                scanf("%lf", &parameter[5]);
                 }
         }
 	return;

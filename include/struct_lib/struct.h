@@ -12,19 +12,7 @@ struct point{
 
 /*we will create a structure between all dynamic systems that contains parametrs*/
 struct parameter{
-	double sigma;
-	double rho;
-	double beta;
-	double g;
-	double l;
-	double gamma;
-	double m;
-	double a;
-	double b;
-	double c;
-	double d;
-	double e;
-	double f;
+	double parameter[6];
 }para;
 
 #endif

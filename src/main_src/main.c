@@ -29,10 +29,10 @@ int main(int argc, char *argv[]){
 	coordinates(p.position, flag, by_default);
 
 	/*input : constants σ, ρ, β*/
-	constants(&para.sigma, &para.rho, &para.beta, &para.g, &para.l, &para.gamma, &para.m,&para.a, &para.b, &para.c, &para.d, &para.e, &para.f, flag, by_default);
+	constants(para.parameter, flag, by_default);
 
 	/*calculation and display of speed dx dy dz*/
-	initial_speed(p.speed, p.position, &para.sigma, &para.rho, &para.beta, &para.g, &para.l, &para.gamma, &para.m, flag);
+	initial_speed(p.speed, p.position, para.parameter, flag);
 	
 	/*display : initial speed*/
 	display_speed(p.speed, flag);
@@ -52,7 +52,7 @@ int main(int argc, char *argv[]){
 	/*main loop : calculation of instant speed and coordinates at every t instant, then I write this data into the file*/
 	for(i = p.dt;i <= p.tmax; i += p.dt){
 		/*calcul : the new position at every moment t*/
-		instant_speed(p.speed_t, p.speed, p.position, &para.sigma, &para.rho, &para.beta, &para.g, &para.l, &para.gamma, &para.m,&para.a, &para.b, &para.c, &para.d, &para.e, &para.f, &p.dt, flag);
+		instant_speed(p.speed_t, p.speed, p.position, para.parameter, &p.dt, flag);
 		/*display : the new position at every moment t*/
 		display_coordinates(p.position, &i, flag);
 		/*write to file the new position at every moment t then close it*/
