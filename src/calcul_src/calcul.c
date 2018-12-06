@@ -17,6 +17,22 @@ void initial_speed(double speed[], double position[], double parameter[], char f
 	return;
 }
 
+
+void anishchenko(double speed_t[], double position[], double parameter[], double *dt){
+	speed_t[0] = position[0] + (parameter[0] * position[0] + position[1] - position[0] *position[2]) * (*dt);
+	speed_t[1] = position[1] + (- position[0]) * (*dt);
+	if (position[0] > 0){
+		speed_t[2] = position[2] + (-parameter[1] * position[2] + parameter[1] * pow(position[0],2)) * (*dt);
+	}
+	else{
+		speed_t[2] = position[2] + (-parameter[1] * position[2]) * (*dt);
+	}
+	position[0] = speed_t[0];
+	position[1] = speed_t[1];
+	position[2] = speed_t[2];
+	return;
+}
+
 /*calculation of instant speed according to choosen dynamic system */
 void instant_speed(double speed_t[], double speed[], double position[],double parameter[], double *dt, char flag[]){
 	if (strcmp(flag,"1") == 0){//lorenz system	
@@ -41,6 +57,9 @@ void instant_speed(double speed_t[], double speed[], double position[],double pa
                 position[0] = speed_t[0];
                 position[1] = speed_t[1];
                 position[2] = speed_t[2];
+	}
+	if (strcmp(flag,"4") == 0){//Anishchenko system
+		anishchenko(speed_t, position, parameter, dt);						
 	}
 	return;
 }

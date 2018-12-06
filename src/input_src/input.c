@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "input.h"
 #include "string.h"
@@ -8,8 +9,8 @@ void type_flag(char flag[]){
 	while(1){
                 scanf("%s", flag);
                 /*error : the flag  is incorrect*/
-                if(strcmp(flag,"1") != 0 && strcmp(flag,"2") != 0 && strcmp(flag,"3") != 0){
-                        printf("error : you can type only 1 or 2, please try again.\nyou choose : ");
+                if( strcmp(flag,"1") < 0 && strcmp(flag,"4") > 0){
+                        printf("error : you can type an integer between 1 et 4, please try again.\nyou choose : ");
                         continue;
                 }
                 return;
@@ -33,12 +34,25 @@ void default_parameters(char by_default[]){
 
 /*input : initial coordinates; α is the pendulum tilt angle, β is the angular speed*/
 void coordinates(double position[], char flag[], char by_default[]){
-	if (strcmp(flag,"1") == 0){
-		if (strcmp(by_default,"yes") == 0){
+	if (strcmp(flag,"2") != 0){
+		if (strcmp(by_default, "yes") == 0 && strcmp(flag, "1") == 0){
 			position[0] = 1;
 			position[1] = 2;
 			position[2] = 3;
 		}
+		
+		if (strcmp(by_default, "yes") == 0 && strcmp(flag, "3") == 0){
+			position[0] = 0.1;
+			position[1] = 0;
+			position[2] = 0;
+		}
+		
+		if (strcmp(by_default, "yes") == 0 && strcmp(flag, "4") == 0){	
+			position[0] = 0;
+			position[1] = 0;
+			position[2] = 0;
+		}
+
 		else{
 			printf("type the coordinate x : ");
 			scanf("%lf", &position[0]);
@@ -60,6 +74,8 @@ void coordinates(double position[], char flag[], char by_default[]){
 		scanf("%lf", &position[1]);
 		}
 	}
+
+	/*
 	if (strcmp(flag,"3") == 0){
                 if (strcmp(by_default,"yes") == 0){
                         position[0] = 0.1;
@@ -75,6 +91,8 @@ void coordinates(double position[], char flag[], char by_default[]){
                         scanf("%lf", &position[2]);
                 }
         }
+	*/
+
 	return;
 }
 
@@ -136,7 +154,15 @@ void constants(double parameter[], char flag[], char by_default[]){
                 printf("type f : ");
                 scanf("%lf", &parameter[5]);
                 }
-        }
+	}
+
+	        
+	if (strcmp(flag,"4") == 0){
+		printf("type µ : ");
+		scanf("%lf", &parameter[0]);
+		printf("type η : ");
+		scanf("%lf", &parameter[1]);
+	}
 	return;
 }
 

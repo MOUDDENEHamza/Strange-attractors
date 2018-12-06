@@ -7,6 +7,7 @@
 ,dy,dz*/
 void initial_speed(double speed[], double position[], double parameter[], char flag[]);
 
+void anishchenko(double speed_t[], double position[], double parameter[], double *dt);
 
 /*calcul : speed at each moment t*/
 void instant_speed(double speed_t[], double speed[], double position[], double parameter[],  double *dt, char flag[]);

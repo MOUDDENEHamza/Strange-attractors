@@ -50,7 +50,7 @@ int main(int argc, char *argv[]){
 	file(p.position, p.speed_t,  &i, flag);
 	
 	/*main loop : calculation of instant speed and coordinates at every t instant, then I write this data into the file*/
-	for(i = p.dt;i <= p.tmax; i += p.dt){
+	for(i = p.dt;i <= p.tmax + p.dt; i += p.dt){
 		/*calcul : the new position at every moment t*/
 		instant_speed(p.speed_t, p.speed, p.position, para.parameter, &p.dt, flag);
 		/*display : the new position at every moment t*/
