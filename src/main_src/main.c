@@ -11,6 +11,7 @@ int main(int argc, char *argv[]){
 	/*initialize all variables*/
 	char flag[255];
 	char by_default[255];
+	char file_name[255];
         double i = 0;
 	
 	/*ask the user to choose one dynamic system*/
@@ -18,9 +19,12 @@ int main(int argc, char *argv[]){
 	
 	/*ask user to choose the dynamic system by typing 1 or 2*/
 	type_flag(flag);
+	
+	/*fix the name file for choosen dynamic system*/
+	f_name(file_name, flag);
 
 	/*display : the init bar with the dynamic system that will be used*/
-        display_init(flag);
+        display_init(file_name);
 	
 	/*ask user if he wants to execute the programm with default setting*/
 	default_parameters(by_default);
@@ -52,7 +56,7 @@ int main(int argc, char *argv[]){
 	/*main loop : calculation of instant speed and coordinates at every t instant, then I write this data into the file*/
 	for(i = p.dt;i <= p.tmax + p.dt; i += p.dt){
 		/*calcul : the new position at every moment t*/
-		instant_speed(p.speed_t, p.speed, p.position, para.parameter, &p.dt, flag);
+		instant_speed(p.speed_t, p.position, para.parameter, &p.dt, flag);
 		/*display : the new position at every moment t*/
 		display_coordinates(p.position, &i, flag);
 		/*write to file the new position at every moment t then close it*/

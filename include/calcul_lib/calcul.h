@@ -3,13 +3,48 @@
 
 #include "struct.h"
 
-/*calculation of intialal speed according to choosen dynamic system, for example:lorenz system has dx
-,dy,dz*/
+/**************************************LORENZ SYSTEM**************************************/
+
+//calculation of initial speed of lorenz system
+void lorenz_init(double speed[], double position[], double parameter[]);
+
+//calculation of instant speed of lorenz system
+void lorenz_t(double speed_t[], double position[], double parameter[], double *dt);
+
+/*****************************************************************************************/
+/***************************************EULER SYSTEM**************************************/
+
+//calculation of initial speed of euler system, the only 2D system
+void euler_init(double speed[], double position[], double parameter[]);
+
+//calculation of instant speed of euler system, the only 2D system
+void euler_t(double speed_t[], double position[], double parameter[], double *dt);
+
+/*****************************************************************************************/
+/****************************************AIZAWA SYSTEM************************************/
+
+//calculation of initial speed of aizawa system
+void aizawa_init(double speed[], double position[], double parameter[]);
+
+//calculation of instant speed of aizawa system
+void aizawa_t(double speed_t[], double position[], double parameter[], double *dt);
+
+/*****************************************************************************************/
+/****************************************ANISHCHENKO SYSTEM*******************************/
+
+
+//calculation of initial speed of anishchenko system
+void anishchenko_init(double speed[], double position[], double parameter[]);
+
+//calculation of initial speed of anishchenko system
+void anishchenko_t(double speed_t[], double position[], double parameter[], double *dt);
+
+/*****************************************************************************************/
+
+/*main loop of calculation of initial speed according to choosen dynamic system */
 void initial_speed(double speed[], double position[], double parameter[], char flag[]);
 
-void anishchenko(double speed_t[], double position[], double parameter[], double *dt);
-
-/*calcul : speed at each moment t*/
-void instant_speed(double speed_t[], double speed[], double position[], double parameter[],  double *dt, char flag[]);
+/*main loop of calculation of instant speed according to choosen dynamic system */
+void instant_speed(double speed_t[], double position[],double parameter[], double *dt, char flag[]);
 
 #endif
