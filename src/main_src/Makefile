@@ -19,6 +19,8 @@ compile : main.c
 	mv gnuplot.o ../../lib/
 	mv file.o ../../lib/
 	mv displayShell.o ../../lib/
+	mv dynamicSystems.o ../../lib/
+	mv inputSystems.o ../../lib/
 	gcc -o ../../bin/main ../../lib/*.o -lm
 
 run : main.c

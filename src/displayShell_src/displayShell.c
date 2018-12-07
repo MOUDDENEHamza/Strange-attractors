@@ -4,8 +4,9 @@
 
 /*display : this function initialize and give to user the list of the dyanmic system that he can choose,then ask him to choose one*/
 void launch_programm(){
+
 	printf("\n******************************************************\n");
-        printf("\nthere are seven dynamic system, to execute :\n");
+        printf("\nthere are seven dynamic systems, to execute :\n");
         printf("\n\tthe Lorenz attractor enter 1.\n");
         printf("\tthe Euler attractor enter 2.\n");
 	printf("\tthe Aizawa attractor enter 3.\n");
@@ -20,6 +21,7 @@ void launch_programm(){
 
 /*display : the init bar with the choosen dynamic system that will be used*/
 void display_init(char file_name[]){
+	
 	printf("\n****************init : %s system***************************\n", file_name);
 	
 	return;
@@ -27,19 +29,22 @@ void display_init(char file_name[]){
 
 /*display : initial speed of the choosen dynamic system*/
 void display_speed(double speed[], char flag[]){
+	
+	printf("\n-----------------------speed--------------------\n");
+
 	if (strcmp(flag,"2") != 0){//display the initial speed of all 3D dynamic systeme dx, dy, dz.
-		printf("\n-----------------------speed--------------------\n");
 		printf("dx = %lf \n", speed[0]);
 		printf("dy = %lf \n", speed[1]);
 		printf("dz = %lf \n", speed[2]);
-		printf("------------------------------------------------\n");
 	} 	
 
 	if (strcmp(flag,"2") == 0){//display the initial speed of Euler systeme dβ angular speed, dv linear speed.
 		printf("dβ = %lf \n", speed[0]);
 		printf("dv = %lf \n", speed[1]);
 	}
-
+	
+	printf("------------------------------------------------\n");
+	
 	return;
 }
 

@@ -6,6 +6,7 @@
 
 /*fix the file name adapted to the choosen dynamic system*/
 char f_name(char file_name[], char flag[]){
+	
 	if (strcmp(flag,"1") == 0){//file name : Lorenz.
                 strcpy(file_name, "lorenz");
         }
@@ -40,7 +41,7 @@ char f_name(char file_name[], char flag[]){
 /*this function give the name of the dyanmic system choosen and _coordinates.dat to point_file*/
 void p_file(char file_name[], char point_file[], char flag[]){
 	
-	file_name, f_name(file_name, flag);
+	f_name(file_name, flag);
 	strcpy(point_file, strcat(file_name, "_coordinates.dat"));
 
 	return;

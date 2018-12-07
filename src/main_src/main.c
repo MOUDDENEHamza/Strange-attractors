@@ -5,6 +5,8 @@
 #include "file.h"
 #include "displayShell.h"
 #include "struct.h"
+#include "dynamicSystems.h"
+#include "inputSystems.h"
 
 #define BUFFER 255
 

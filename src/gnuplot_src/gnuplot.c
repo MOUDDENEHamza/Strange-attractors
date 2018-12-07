@@ -4,7 +4,8 @@
 
 /*lunch gnuplot from c programm and display the curve of points*/
 void gnuplot_point(char flag[], char point_file[]){
-        FILE *pipe = popen("gnuplot -persist","w");
+
+	FILE *pipe = popen("gnuplot -persist","w");
 
 	if (strcmp(flag,"2") != 0){//draw the curve of 3D dynamic system by typing the command below.
 		fprintf(pipe, "splot '%s' u 2:3:4 with points palette\n", point_file);
