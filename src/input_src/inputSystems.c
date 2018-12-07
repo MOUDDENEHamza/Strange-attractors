@@ -281,14 +281,14 @@ void hadley_coordinates(double position[]){
 //input constants of hadley dynamic system.
 void hadley_constants(double parameter[], char by_default[]){
 
-	if (strcmp(by_default,"yes") == 0){//automatic input : chenlee.
+	if (strcmp(by_default,"yes") == 0){//automatic input : hadley.
 		parameter[0] = 0.2;
 		parameter[1] = 4;
 		parameter[2] = 8;
 		parameter[3] = 1;
 	}
 
-	else{//manual input : chenlee.
+	else{//manual input : hadley.
 		printf("\n---------------------Constants--------------------\n");
 		printf("enter α : ");
 		scanf("%lf", &parameter[0]);
@@ -305,3 +305,70 @@ void hadley_constants(double parameter[], char by_default[]){
 }
 
 /*****************************************************************************************/
+/****************************************RAYLEIGH SYSTEM************************************/
+
+//input initial coordinates of rayleigh dynamic system.
+void rayleigh_coordinates(double position[]){
+
+	position[0] = 1;
+	position[1] = 2;
+	position[2] = 3;
+
+	return;
+}
+
+//input constants of rayleigh dynamic system.
+void rayleigh_constants(double parameter[], char by_default[]){
+
+	if (strcmp(by_default,"yes") == 0){//automatic input : rayleigh.
+		parameter[0] = 9;
+		parameter[1] = 12;
+		parameter[2] = 5;
+	}
+
+	else{//manual input : rayleigh.
+		printf("\n---------------------Constants--------------------\n");
+		printf("enter α : ");
+		scanf("%lf", &parameter[0]);
+		printf("enter r : ");
+		scanf("%lf", &parameter[1]);
+		printf("enter β : ");
+		scanf("%lf", &parameter[2]);
+		printf("------------------------------------------------------\n");
+	}
+
+	return;
+}
+
+/*****************************************************************************************/
+/****************************************THOMAS SYSTEM************************************/
+
+//input initial coordinates of thomas dynamic system.
+void thomas_coordinates(double position[]){
+
+	position[0] = 1;
+	position[1] = 2;
+	position[2] = 3;
+
+	return;
+}
+
+//input constants of thomas dynamic system.
+void thomas_constants(double parameter[], char by_default[]){
+
+	if (strcmp(by_default,"yes") == 0){//automatic input : thomas.
+		parameter[0] = 0.19;
+	}
+
+	else{//manual input : thomas.
+		printf("\n---------------------Constants--------------------\n");
+		printf("enter β : ");
+		scanf("%lf", &parameter[0]);
+		printf("------------------------------------------------------\n");
+	}
+
+	return;
+}
+
+/*****************************************************************************************/
+

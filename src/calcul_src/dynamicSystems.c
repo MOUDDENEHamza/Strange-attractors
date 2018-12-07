@@ -193,4 +193,49 @@ void hadley_t(double speed_t[], double position[], double parameter[], double *d
 
 	return;
 }
+
+/*****************************************************************************************/
+/**************************************RAYLEIGH SYSTEM**************************************/
+
+//calculation of initial speed of rayleigh system
+void rayleigh_init(double speed[], double position[], double parameter[]){
+
+	speed[0] = -position[0] * parameter[0] + parameter[0] * position[1];
+	speed[1] = parameter[1] * position[0] - position[1] - position[0] * position[2];
+	speed[2] = position[0] * position[1] - parameter[2] * position[2];
+
+	return;
+}
+
+//calculation of instant speed of rayleigh system
+void rayleigh_t(double speed_t[], double position[], double parameter[], double *dt){
+
+	speed_t[0] = position[0] + (-position[0] * parameter[0] + parameter[0] * position[1]) * (*dt);
+	speed_t[1] = position[1] + (parameter[1] * position[0] - position[1] - position[0] * position[2]) * (*dt);
+	speed_t[2] = position[2] + (position[0] * position[1] - parameter[2] * position[2]) * (*dt);
+
+	return;
+}
+/*****************************************************************************************/
+/**************************************THOMAS SYSTEM**************************************/
+
+//calculation of initial speed of thomas system
+void thomas_init(double speed[], double position[], double parameter[]){
+
+	speed[0] = - parameter[0] * position[0] + sin(position[1]);
+	speed[1] = - parameter[0] * position[1] + sin(position[2]);
+	speed[2] = - parameter[0] * position[2] + sin(position[0]);
+
+	return;
+}
+
+//calculation of instant speed of thomas system
+void thomas_t(double speed_t[], double position[], double parameter[], double *dt){
+
+	speed_t[0] = position[0] + (-parameter[0] * position[0] + sin(position[1])) * (*dt);
+	speed_t[1] = position[1] + (- parameter[0] * position[1] + sin(position[2])) * (*dt);
+	speed_t[2] = position[2] + (- parameter[0] * position[2] + sin(position[0])) * (*dt);
+
+	return;
+}
 /*****************************************************************************************/

@@ -7,11 +7,11 @@
 
 /*the user has to choose between the different dynamic systeme*/
 void type_flag(char flag[]){
-	
+
 	while(1){
                 scanf("%s", flag);
                 
-		if( strcmp(flag, "1") < 0 || strcmp(flag, "8") > 0){
+		if( strcmp(flag, "1") < 0 || strcmp(flag, "10") > 0){
 			//error : the flag  is incorrect
                         printf("error : you can type an integer between 1 et 10, please try again.\nyou choose : ");
                         continue;
@@ -76,6 +76,14 @@ void coordinates(double position[], char flag[], char by_default[]){
 		if (strcmp(flag, "8") == 0){//input of initial coordinates adapted to hadley dynamic system.
 			hadley_coordinates(position);
 		}
+
+		if (strcmp(flag, "9") == 0){//input of initial coordinates adapted to rayleigh dynamic system.
+			rayleigh_coordinates(position);	
+		}
+
+		if (strcmp(flag, "10") == 0){//input of initial coordinates adapted to thomas dynamic system.
+			thomas_coordinates(position);	
+		}
 	}
 
 	else{//manual input of adapted dynamic system.
@@ -139,6 +147,14 @@ void constants(double parameter[], char flag[], char by_default[]){
 	
 	if (strcmp(flag,"8") == 0){//input of constants adapted of hadley dynamic system.
 		hadley_constants(parameter, by_default);
+	}
+	
+	if (strcmp(flag, "9") == 0){//input of initial coordinates adapted to rayleigh dynamic system.	
+		rayleigh_constants(parameter, by_default); 		
+	}
+
+	if (strcmp(flag, "10") == 0){//input of initial coordinates adapted to thomas dynamic system.	
+		thomas_constants(parameter, by_default); 		
 	}
 
 	return;

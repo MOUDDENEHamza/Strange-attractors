@@ -75,5 +75,23 @@ void hadley_init(double speed[], double position[], double parameter[]);
 void hadley_t(double speed_t[], double position[], double parameter[], double *dt);
 
 /*****************************************************************************************/
+/****************************************RAYLEIGH SYSTEM************************************/
+
+//calculation of initial speed of rayleigh system.
+void rayleigh_init(double speed[], double position[], double parameter[]);
+
+//calculation of instant speed of rayleigh system.
+void rayleigh_t(double speed_t[], double position[], double parameter[], double *dt);
+
+/*****************************************************************************************/
+/****************************************THOMAS SYSTEM************************************/
+
+//calculation of initial speed of thomas system.
+void thomas_init(double speed[], double position[], double parameter[]);
+
+//calculation of instant speed of thomas system.
+void thomas_t(double speed_t[], double position[], double parameter[], double *dt);
+
+/*****************************************************************************************/
 
 #endif

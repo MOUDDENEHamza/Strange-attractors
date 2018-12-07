@@ -15,8 +15,10 @@ void launch_programm(){
 	printf("\tthe Rossler atractor enter 6.\n");
         printf("\tthe coullet atractor enter 7.\n");
 	printf("\tthe Hadley atractor enter 8.\n");
+	printf("\tthe Rayleigh atractor enter 9.\n");
+	printf("\tthe Thomas atractor enter 10.\n");
 	printf("\nyou choose : ");
-	
+
 	return;
 }
 

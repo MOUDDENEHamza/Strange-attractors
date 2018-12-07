@@ -68,13 +68,31 @@ void coullet_constants(double parameter[], char by_default[]);
 
 
 /*****************************************************************************************/
-/****************************************CHENLEE SYSTEM***********************************/
+/*****************************************HADLEY SYSTEM***********************************/
 
-//input initial coordinates of chenlee system.
+//input initial coordinates of hadley system.
 void hadley_coordinates(double position[]);
 
-//input constants of chenlee dynamic system.
+//input constants of hadley dynamic system.
 void hadley_constants(double parameter[], char by_default[]);
+
+/*****************************************************************************************/
+/*****************************************RAYLEIGH SYSTEM***********************************/
+
+//input initial coordinates of rayleigh system.
+void rayleigh_coordinates(double position[]);
+
+//input constants of rayleigh dynamic system.
+void rayleigh_constants(double parameter[], char by_default[]);
+
+/*****************************************************************************************/
+/*****************************************THOMAS SYSTEM***********************************/
+
+//input initial coordinates of thomas system.
+void thomas_coordinates(double position[]);
+
+//input constants of thomas dynamic system.
+void thomas_constants(double parameter[], char by_default[]);
 
 /*****************************************************************************************/
 

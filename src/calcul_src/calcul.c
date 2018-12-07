@@ -38,6 +38,13 @@ void initial_speed(double speed[], double position[], double parameter[], char f
 	if (strcmp(flag,"8") == 0){//hadley system : initial speed
 		hadley_init(speed, position, parameter);
 	}
+	
+	if (strcmp(flag,"9") == 0){//rayleigh system : initial speed
+		rayleigh_init(speed, position, parameter);
+	}
+	if (strcmp(flag,"10") == 0){//thomas system : initial speed
+		thomas_init(speed, position, parameter);
+	}
 
 	return;
 }
@@ -77,6 +84,14 @@ void instant_speed(double speed_t[], double position[],double parameter[], doubl
 		hadley_t(speed_t, position, parameter, dt);
 	}
 	
+	if (strcmp(flag,"9") == 0){//rayleigh system : instant speed
+		rayleigh_t(speed_t, position, parameter, dt);
+	}
+	if (strcmp(flag,"10") == 0){//thomas system : instant speed
+		thomas_t(speed_t, position, parameter, dt);
+	}
+
+
 	position[0] = speed_t[0];
         position[1] = speed_t[1];
         position[2] = speed_t[2];

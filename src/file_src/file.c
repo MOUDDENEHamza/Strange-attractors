@@ -39,6 +39,13 @@ char f_name(char file_name[], char flag[]){
 		strcpy(file_name, "hadley");				     
     	}
 
+	if (strcmp(flag, "9") == 0){//file name : rayleigh.
+		strcpy(file_name, "rayleigh");
+	}
+
+	if (strcmp(flag, "10") == 0){//file name : thomas.
+		strcpy(file_name, "thomas");
+	}
 	return file_name[BUFFER];
 }
 
