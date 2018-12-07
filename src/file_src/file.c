@@ -7,34 +7,38 @@
 /*fix the file name adapted to the choosen dynamic system*/
 char f_name(char file_name[], char flag[]){
 	
-	if (strcmp(flag,"1") == 0){//file name : Lorenz.
+	if (strcmp(flag, "1") == 0){//file name : Lorenz.
                 strcpy(file_name, "lorenz");
         }
 
-	if (strcmp(flag,"2") == 0){//file name : Euler.
+	if (strcmp(flag, "2") == 0){//file name : Euler.
                 strcpy(file_name, "euler");
         }
 
-	if (strcmp(flag,"3") == 0){//file name : Aizawa.
+	if (strcmp(flag, "3") == 0){//file name : Aizawa.
                 strcpy(file_name, "aizawa");
         }
 
-	if (strcmp(flag,"4") == 0){//file name : Anishchenko.
+	if (strcmp(flag, "4") == 0){//file name : Anishchenko.
                 strcpy(file_name, "anishchenko");
         }
 	
-	if (strcmp(flag,"5") == 0){//file name : Hover.
+	if (strcmp(flag, "5") == 0){//file name : Hover.
                 strcpy(file_name, "hoover");
         }
 	
-	if (strcmp(flag,"6") == 0){//file name : Rossler.
+	if (strcmp(flag, "6") == 0){//file name : Rossler.
                 strcpy(file_name, "hoover");
         }
 	
-	if (strcmp(flag,"7") == 0){//file name : coullet.
+	if (strcmp(flag, "7") == 0){//file name : coullet.
                 strcpy(file_name, "coullet");
         }
 	
+	if (strcmp(flag, "8") == 0){//file name : hadley.
+		strcpy(file_name, "hadley");				     
+    	}
+
 	return file_name[BUFFER];
 }
 

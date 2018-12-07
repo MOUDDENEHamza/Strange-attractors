@@ -34,6 +34,10 @@ void initial_speed(double speed[], double position[], double parameter[], char f
 	if (strcmp(flag,"7") == 0){//coullet system : initial speed
                 coullet_init(speed, position, parameter);
         }
+	
+	if (strcmp(flag,"8") == 0){//hadley system : initial speed
+		hadley_init(speed, position, parameter);
+	}
 
 	return;
 }
@@ -61,13 +65,17 @@ void instant_speed(double speed_t[], double position[],double parameter[], doubl
                 hoover_t(speed_t, position, parameter, dt); 
 	}
 	
-	if (strcmp(flag,"6") == 0){//rossler system : initial speed
+	if (strcmp(flag,"6") == 0){//rossler system : instant speed
                 rossler_t(speed_t, position, parameter, dt);
         }
 	
-	if (strcmp(flag,"7") == 0){//coullet system : initial speed
+	if (strcmp(flag,"7") == 0){//coullet system : instant speed
                 coullet_t(speed_t, position, parameter, dt);
         }
+
+	if (strcmp(flag,"8") == 0){//hadley system : instant speed
+		hadley_t(speed_t, position, parameter, dt);
+	}
 	
 	position[0] = speed_t[0];
         position[1] = speed_t[1];

@@ -171,4 +171,26 @@ void coullet_t(double speed_t[], double position[], double parameter[], double *
 	return;
 }
 
+/*******************************************************************************************/
+/**************************************HADLEY SYSTEM**************************************/
+
+//calculation of initial speed of hadley system
+void hadley_init(double speed[], double position[], double parameter[]){
+
+        speed[0] = - pow(position[1], 2) - pow(position[2], 2) - parameter[0] * position[0] + parameter[0] * parameter[2];
+	speed[1] = position[0] * position[1] - parameter[1] * position[2] * position[0] -  position[1] + parameter[3];
+	speed[2] = parameter[1] * position[0] * position[1] + position[0] * position[2] - position[2];
+                                
+	return;
+}
+
+//calculation of instant speed of hadley system
+void hadley_t(double speed_t[], double position[], double parameter[], double *dt){
+
+	speed_t[0] = position[0] + (-pow(position[1], 2) - pow(position[2], 2) - parameter[0] * position[0] + parameter[0] * parameter[2]) * (*dt);
+	speed_t[1] = position[1] + (position[0] * position[1] - parameter[1] * position[2] * position[0] - position[1] + parameter[3]) * (*dt);
+	speed_t[2] = position[2] + (parameter[1] * position[0] * position[1] + position[0] * position[2] - position[2]) * (*dt);
+
+	return;
+}
 /*****************************************************************************************/

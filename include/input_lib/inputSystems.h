@@ -60,13 +60,22 @@ void rossler_constants(double parameter[], char by_default[]);
 /*****************************************************************************************/
 /****************************************COULLET SYSTEM************************************/
 
-//input initial coordinates of rossler system.
+//input initial coordinates of coullet system.
 void coullet_coordinates(double position[]);
 
-//input constants of rossler dynamic system.
+//input constants of coullet dynamic system.
 void coullet_constants(double parameter[], char by_default[]);
+
+
+/*****************************************************************************************/
+/****************************************CHENLEE SYSTEM***********************************/
+
+//input initial coordinates of chenlee system.
+void hadley_coordinates(double position[]);
+
+//input constants of chenlee dynamic system.
+void hadley_constants(double parameter[], char by_default[]);
 
 /*****************************************************************************************/
 
 #endif
-

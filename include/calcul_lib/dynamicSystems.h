@@ -65,6 +65,15 @@ void coullet_init(double speed[], double position[], double parameter[]);
 //calculation of instant speed of coullet system.
 void coullet_t(double speed_t[], double position[], double parameter[], double *dt);
 
-///*****************************************************************************************/
+/*****************************************************************************************/
+/****************************************HADLEY SYSTEM************************************/
+
+//calculation of initial speed of hadley system.
+void hadley_init(double speed[], double position[], double parameter[]);
+
+//calculation of instant speed of hadley system.
+void hadley_t(double speed_t[], double position[], double parameter[], double *dt);
+
+/*****************************************************************************************/
 
 #endif

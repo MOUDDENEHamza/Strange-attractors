@@ -7,12 +7,13 @@
 
 /*the user has to choose between the different dynamic systeme*/
 void type_flag(char flag[]){
+	
 	while(1){
                 scanf("%s", flag);
                 
-		if( strcmp(flag, "1") < 0 || strcmp(flag, "7") > 0){
+		if( strcmp(flag, "1") < 0 || strcmp(flag, "8") > 0){
 			//error : the flag  is incorrect
-                        printf("error : you can type an integer between 1 et 7, please try again.\nyou choose : ");
+                        printf("error : you can type an integer between 1 et 10, please try again.\nyou choose : ");
                         continue;
                 }
                 
@@ -70,9 +71,13 @@ void coordinates(double position[], char flag[], char by_default[]){
 		if (strcmp(flag, "7") == 0){//input of initial coordinates adapted to coullet dynamic system.
                 	coullet_coordinates(position);
         	}
-
+		
+		      
+		if (strcmp(flag, "8") == 0){//input of initial coordinates adapted to hadley dynamic system.
+			hadley_coordinates(position);
+		}
 	}
-	
+
 	else{//manual input of adapted dynamic system.
 
 		if (strcmp(flag, "2") != 0){//manual input of each 3D dynamic system.
@@ -132,6 +137,10 @@ void constants(double parameter[], char flag[], char by_default[]){
                 coullet_constants(parameter, by_default);
         }
 	
+	if (strcmp(flag,"8") == 0){//input of constants adapted of hadley dynamic system.
+		hadley_constants(parameter, by_default);
+	}
+
 	return;
 }
 

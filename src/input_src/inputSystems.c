@@ -266,3 +266,42 @@ void coullet_constants(double parameter[], char by_default[]){
 
 
 /*****************************************************************************************/
+/****************************************HADLEY SYSTEM************************************/
+
+//input initial coordinates of hadley dynamic system.
+void hadley_coordinates(double position[]){
+
+	position[0] = 1;
+	position[1] = 2;
+	position[2] = 3;
+
+	return;
+}
+
+//input constants of hadley dynamic system.
+void hadley_constants(double parameter[], char by_default[]){
+
+	if (strcmp(by_default,"yes") == 0){//automatic input : chenlee.
+		parameter[0] = 0.2;
+		parameter[1] = 4;
+		parameter[2] = 8;
+		parameter[3] = 1;
+	}
+
+	else{//manual input : chenlee.
+		printf("\n---------------------Constants--------------------\n");
+		printf("enter α : ");
+		scanf("%lf", &parameter[0]);
+		printf("enter β : ");
+		scanf("%lf", &parameter[1]);
+		printf("enter ζ : ");
+		scanf("%lf", &parameter[2]);
+		printf("enter δ : ");
+		scanf("%lf", &parameter[3]);
+		printf("------------------------------------------------------\n");
+	}
+
+	return;
+}
+
+/*****************************************************************************************/
