@@ -32,7 +32,6 @@ void aizawa_t(double speed_t[], double position[], double parameter[], double *d
 /*****************************************************************************************/
 /****************************************ANISHCHENKO SYSTEM*******************************/
 
-
 //calculation of initial speed of anishchenko system
 void anishchenko_init(double speed[], double position[], double parameter[]);
 
@@ -40,6 +39,34 @@ void anishchenko_init(double speed[], double position[], double parameter[]);
 void anishchenko_t(double speed_t[], double position[], double parameter[], double *dt);
 
 /*****************************************************************************************/
+/****************************************HOOVER SYSTEM************************************/
+
+//calculation of initial speed of hoover system.
+void hoover_init(double speed[], double position[], double parameter[]);
+
+//calculation of instant speed of hoover system.
+void hoover_t(double speed_t[], double position[], double parameter[], double *dt);
+
+/*****************************************************************************************/
+/****************************************ROSSLER SYSTEM************************************/
+
+//calculation of initial speed of rossler system.
+void rossler_init(double speed[], double position[], double parameter[]);
+
+//calculation of instant speed of rossler system.
+void rossler_t(double speed_t[], double position[], double parameter[], double *dt);
+
+/*****************************************************************************************/
+/****************************************COULLET SYSTEM************************************/
+
+//calculation of initial speed of coullet system.
+void coullet_init(double speed[], double position[], double parameter[]);
+
+//calculation of instant speed of coullet system.
+void coullet_t(double speed_t[], double position[], double parameter[], double *dt);
+
+/*****************************************************************************************/
+
 
 /*main loop of calculation of initial speed according to choosen dynamic system */
 void initial_speed(double speed[], double position[], double parameter[], char flag[]);

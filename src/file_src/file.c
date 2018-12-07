@@ -19,6 +19,18 @@ void f_name(char file_name[], char flag[]){
 	if (strcmp(flag,"4") == 0){//file name : Anishchenko.
                 strcpy(file_name, "anishchenko");
         }
+	
+	if (strcmp(flag,"5") == 0){//file name : Hover.
+                strcpy(file_name, "hoover");
+        }
+	
+	if (strcmp(flag,"6") == 0){//file name : Rossler.
+                strcpy(file_name, "hoover");
+        }
+	
+	if (strcmp(flag,"7") == 0){//file name : coullet.
+                strcpy(file_name, "coullet");
+        }
 
 	return;
 }

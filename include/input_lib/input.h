@@ -40,7 +40,24 @@ void anishchenko_constants(double parameter[], char by_default[]);
 
 
 /*****************************************************************************************/
+/****************************************HOOVER SYSTEM************************************/
 
+//input initial coordinates of hoover system.
+void hoover_coordinates(double position[], char by_default[]);
+
+//input constants of hoover dynamic system.
+void hoover_constants(double parameter[], char by_default[]);
+
+/*****************************************************************************************/
+/****************************************ROSSLER SYSTEM************************************/
+
+//input initial coordinates of rossler system.
+void rossler_coordinates(double position[], char by_default[]);
+
+//input constants of rossler dynamic system.
+void rossler_constants(double parameter[], char by_default[]);
+
+/*****************************************************************************************/
 
 /*the user has to choose between the different dynamic systeme*/
 void type_flag(char flag[]);
