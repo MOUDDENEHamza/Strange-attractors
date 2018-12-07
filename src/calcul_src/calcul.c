@@ -21,9 +21,6 @@ void lorenz_t(double speed_t[], double position[], double parameter[], double *d
 	speed_t[0] = position[0] + (parameter[0] * (position[1] - position[0])) * (*dt);
         speed_t[1] = position[1] + (position[0] * (parameter[1] - position[2]) - position[1]) * (*dt);
         speed_t[2] = position[2] + (position[0] * position[1] - parameter[2] * position[2]) * (*dt);
-        position[0] = speed_t[0];
-        position[1] = speed_t[1];
-        position[2] = speed_t[2];
         
 	return;
 }
@@ -45,8 +42,6 @@ void euler_t(double speed_t[], double position[], double parameter[], double *dt
 	
 	speed_t[0] = position[0] + position[1] * (*dt);
         speed_t[1] = position[1] + (( -(parameter[0]) / (parameter[1])) * sin(position[0]) - ((parameter[2]) / parameter[3]) * position[1]) * (*dt);
-        position[0] = speed_t[0];
-        position[1] = speed_t[1];
         
 	return;
 }
@@ -70,9 +65,6 @@ void aizawa_t(double speed_t[], double position[], double parameter[], double *d
 	speed_t[0] =position[0] + ((position[2] - parameter[1]) * position[0] -parameter[3] * position[1]) * (*dt);
 	speed_t[1] =position[1] +  (parameter[3] * position[0] + (position[2] - parameter[1]) * position[1]) * (*dt);
 	speed_t[2] =position[2] +  (parameter[2] + parameter[0] * position[2] - (pow(position[2], 3) / 3) - (pow(position[0], 2) + pow(position[1], 2)) * (1 + parameter[4] * position[2] )  + parameter[5] * pow(position[0], 3) * position[2]) * (*dt);
-	position[0] = speed_t[0];
-	position[1] = speed_t[1];
-	position[2] = speed_t[2];
         
 	return;
 }
@@ -105,9 +97,6 @@ void anishchenko_t(double speed_t[], double position[], double parameter[], doub
         else{
                 speed_t[2] = position[2] + (-parameter[1] * position[2]) * (*dt);
         }
-        position[0] = speed_t[0];
-        position[1] = speed_t[1];
-        position[2] = speed_t[2];
 
         return;
 }
@@ -131,10 +120,8 @@ void hoover_t(double speed_t[], double position[], double parameter[], double *d
         speed_t[0] = position[0] +  position[1] * (*dt);
         speed_t[1] = position[1] + (-position[1] + position[1] * position[2]) * (*dt);
         speed_t[2] = position[2] + (parameter[0] - pow(position[1], 2)) * (*dt);
-	position[0] = speed_t[0];
-        position[1] = speed_t[1];
-        position[2] = speed_t[2];
-        return;
+        
+	return;
 }
 
 /*****************************************************************************************/
@@ -156,10 +143,8 @@ void rossler_t(double speed_t[], double position[], double parameter[], double *
         speed_t[0] = position[0] +  (-(position[1] + position[2])) * (*dt);
         speed_t[1] = position[1] + (position[0] + parameter[0] * position[1]) * (*dt);
         speed_t[2] = position[2] + (parameter[1] + position[2] * (position[0] - parameter[2])) * (*dt);
-        position[0] = speed_t[0];
-        position[1] = speed_t[1];
-        position[2] = speed_t[2];
-        return;
+        
+	return;
 }
 
 
@@ -182,10 +167,8 @@ void coullet_t(double speed_t[], double position[], double parameter[], double *
         speed_t[0] = position[0] +  (position[1]) * (*dt);
         speed_t[1] = position[1] + (position[2]) * (*dt);
         speed_t[2] = position[2] + (parameter[0] * position[0] + parameter[1] *  position[1] + parameter[2] * position[2] + parameter[3] * pow(position[0], 3)) * (*dt);
-        position[0] = speed_t[0];
-        position[1] = speed_t[1];
-        position[2] = speed_t[2];
-        return;
+        
+	return;
 }
 
 
@@ -257,6 +240,10 @@ void instant_speed(double speed_t[], double position[],double parameter[], doubl
 	if (strcmp(flag,"7") == 0){//coullet system : initial speed
                 coullet_t(speed_t, position, parameter, dt);
         }
+	
+	position[0] = speed_t[0];
+        position[1] = speed_t[1];
+        position[2] = speed_t[2];
 
 	return;
 }

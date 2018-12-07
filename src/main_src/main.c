@@ -6,12 +6,16 @@
 #include "displayShell.h"
 #include "struct.h"
 
+#define BUFFER 255
+
 /*main function : Lorenz system */
 int main(int argc, char *argv[]){
 	/*initialize all variables*/
-	char flag[255];
-	char by_default[255];
-	char file_name[255];
+	char flag[BUFFER];
+	char by_default[BUFFER];
+	char file_name[BUFFER];
+	char point_file[BUFFER];
+	char vector_file[BUFFER];
         double i = 0;
 	
 	/*ask the user to choose one dynamic system*/
@@ -50,8 +54,10 @@ int main(int argc, char *argv[]){
 	/*display : the coordinates that will be stored in lorenz.dat*/
 	display_coordinates(p.position, &i, flag);
 	
-	/*initialize file, update position, write to file then close it*/
-	file(p.position, p.speed_t,  &i, flag);
+	/*initialize files, update position, write to file then close it*/
+	p_file(file_name, point_file, flag);
+	v_file(file_name, vector_file, flag);
+	file(p.position, p.speed_t,  &i, flag, point_file, vector_file);
 	
 	/*main loop : calculation of instant speed and coordinates at every t instant, then I write this data into the file*/
 	for(i = p.dt;i <= p.tmax + p.dt; i += p.dt){
@@ -60,12 +66,12 @@ int main(int argc, char *argv[]){
 		/*display : the new position at every moment t*/
 		display_coordinates(p.position, &i, flag);
 		/*write to file the new position at every moment t then close it*/
-		file(p.position, p.speed_t, &i, flag);
+		file(p.position, p.speed_t, &i, flag, point_file, vector_file);
 	}
 
 	/*run : lunch gnuplot from main.c*/
-	gnuplot_point(flag);//draw the curve by displaying only the coordinates
-	gnuplot_vector(flag);//draw the curve by displaying only the vectors
+	gnuplot_point(flag, point_file);//draw the curve by displaying only the coordinates
+	gnuplot_vector(flag, vector_file);//draw the curve by displaying only the vectors
 	
 	/*display : the end bar*/
 	display_end();

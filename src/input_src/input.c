@@ -362,9 +362,9 @@ void type_flag(char flag[]){
 	while(1){
                 scanf("%s", flag);
                 
-		if( strcmp(flag,"1") < 0 && strcmp(flag,"7") > 0){
+		if( strcmp(flag, "1") < 0 || strcmp(flag, "7") > 0){
 			//error : the flag  is incorrect
-                        printf("error : you can type an integer between 1 et 4, please try again.\nyou choose : ");
+                        printf("error : you can type an integer between 1 et 7, please try again.\nyou choose : ");
                         continue;
                 }
                 

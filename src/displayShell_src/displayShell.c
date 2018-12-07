@@ -5,11 +5,11 @@
 /*display : this function initialize and give to user the list of the dyanmic system that he can choose,then ask him to choose one*/
 void launch_programm(){
 	printf("\n******************************************************\n");
-        printf("\nthere are five dynamic system, to execute :\n");
-        printf("\n\tLorenz attractor enter 1.\n");
-        printf("\tEuler attractor enter 2.\n");
-	printf("\tAizawa attractor enter 3.\n");
-	printf("\tAnishchenko - Astakhov attractor enter 4.\n");
+        printf("\nthere are seven dynamic system, to execute :\n");
+        printf("\n\tthe Lorenz attractor enter 1.\n");
+        printf("\tthe Euler attractor enter 2.\n");
+	printf("\tthe Aizawa attractor enter 3.\n");
+	printf("\tthe Anishchenko - Astakhov attractor enter 4.\n");
 	printf("\tthe Nose - Hoover atractor enter 5.\n");
 	printf("\tthe Rossler atractor enter 6.\n");
         printf("\tthe coullet atractor enter 7.\n");
