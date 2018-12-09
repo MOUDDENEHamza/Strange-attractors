@@ -1,32 +1,38 @@
-all : 
-	make build
-	make compile
-	make run
+GCC = gcc
+INCLUDE = -I ../../include/struct_lib -I ../../include/calcul_lib -I ../../include/displayShell_lib -I ../../include/file_lib -I ../../include/gnuplot_lib -I ../../include/input_lib
+FLAG = -lm 
+SRC = $(wildcard *.c)
+OBJ = calcul.o dynamicSystems.o displayShell.o file.o gnuplot.o input.o main.o inputSystems.o struct.o
+EXEC = ../../bin/main
+LIB = ../../lib/
+MAKE = make all
+
+all :
+	make build -s
+	make compile -s
+	make move -s
+	make run -s
 
 build : 
-	cd ../calcul_src/ && make compile
-	cd ../displayShell_src/ && make compile
-	cd ../file_src/ && make compile
-	cd ../gnuplot_src/ && make compile
-	cd ../input_src/ && make compile
-	cd ../struct_src/ && make compile
+	
+	cd ../calcul_src/ && $(MAKE)
+	cd ../displayShell_src && $(MAKE)
+	cd ../file_src/ && $(MAKE)
+	cd ../gnuplot_src/ && $(MAKE)
+	cd ../input_src/ && $(MAKE)
+	cd ../struct_src/ && $(MAKE)
 	cd ../main_src
+	
+compile : $(SRC)
+	$(GCC) $(INCLUDE) -c $(SRC)
+	
 
-compile : main.c
-	gcc -I ../../include/struct_lib -I ../../include/calcul_lib -I ../../include/displayShell_lib -I ../../include/file_lib -I ../../include/gnuplot_lib -I ../../include/input_lib -c *.c
-	mv calcul.o ../../lib/
-	mv input.o ../../lib/
-	mv main.o ../../lib/
-	mv gnuplot.o ../../lib/
-	mv file.o ../../lib/
-	mv displayShell.o ../../lib/
-	mv dynamicSystems.o ../../lib/
-	mv inputSystems.o ../../lib/
-	mv struct.o ../../lib/
-	gcc -o ../../bin/main ../../lib/*.o -lm
+move : $(OBJ)
+	mv $(OBJ) $(LIB)
 
-run : main.c
-	../../bin/main
+run : $(SRC)
+	$(GCC) -o $(EXEC) $(LIB)*.o $(FLAG)
+	$(EXEC)
 
 clean:
-	rm ../../bin/* ../../lib/* ./*.dat
+	rm $(EXEC) $(LIB)* ./*.dat
