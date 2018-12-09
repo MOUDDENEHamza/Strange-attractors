@@ -20,6 +20,10 @@ int main(int argc, char *argv[]) {
 	char vector_file[BUFFER];
 	double i = 0;
 
+	/*create and handle the structres*/
+	handle_p();
+	handle_para();
+
 	/*ask the user to choose one dynamic system*/
 	launch_programm();
 
@@ -36,39 +40,39 @@ int main(int argc, char *argv[]) {
 	default_parameters(by_default);
 
 	/*input : initial coordinates x, y, z*/
-	coordinates(p.position, flag, by_default);
+	coordinates(p->position, flag, by_default);
 
 	/*input : constants σ, ρ, β*/
-	constants(para.parameter, flag, by_default);
+	constants(para->parameter, flag, by_default);
 
 	/*calculation and display of speed dx dy dz*/
-	initial_speed(p.speed, p.position, para.parameter, flag);
+	initial_speed(p->speed, p->position, para->parameter, flag);
 
 	/*display : initial speed*/
-	display_speed(p.speed, flag);
+	display_speed(p->speed, flag);
 
 	/*input : increment dt*/
-	increment(&p.dt, by_default);
+	increment(&p->dt, by_default);
 
 	/*input : break time Tmax*/
-	break_time(&p.tmax, &p.dt, by_default);
+	break_time(&p->tmax, &p->dt, by_default);
 
 	/*display : the coordinates that will be stored in lorenz.dat*/
-	display_coordinates(p.position, &i, flag);
+	display_coordinates(p->position, &i, flag);
 
 	/*initialize files, update position, write to file then close it*/
 	p_file(file_name, point_file, flag);
 	v_file(file_name, vector_file, flag);
-	file(p.position, p.speed_t, &i, flag, point_file, vector_file);
+	file(p->position, p->speed_t, &i, flag, point_file, vector_file);
 
 	/*main loop : calculation of instant speed and coordinates at every t instant, then I write this data into the file*/
-	for (i = p.dt; i <= p.tmax + p.dt; i += p.dt) {
+	for (i = p->dt; i <= p->tmax + p->dt; i += p->dt) {
 		/*calcul : the new position at every moment t*/
-		instant_speed(p.speed_t, p.position, para.parameter, &p.dt, flag);
+		instant_speed(p->speed_t, p->position, para->parameter, &p->dt, flag);
 		/*display : the new position at every moment t*/
-		display_coordinates(p.position, &i, flag);
+		display_coordinates(p->position, &i, flag);
 		/*write to file the new position at every moment t then close it*/
-		file(p.position, p.speed_t, &i, flag, point_file, vector_file);
+		file(p->position, p->speed_t, &i, flag, point_file, vector_file);
 	}
 
 	/*run : lunch gnuplot from main.c*/

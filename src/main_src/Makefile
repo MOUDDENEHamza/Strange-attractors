@@ -9,6 +9,7 @@ build :
 	cd ../file_src/ && make compile
 	cd ../gnuplot_src/ && make compile
 	cd ../input_src/ && make compile
+	cd ../struct_src/ && make compile
 	cd ../main_src
 
 compile : main.c
@@ -21,6 +22,7 @@ compile : main.c
 	mv displayShell.o ../../lib/
 	mv dynamicSystems.o ../../lib/
 	mv inputSystems.o ../../lib/
+	mv struct.o ../../lib/
 	gcc -o ../../bin/main ../../lib/*.o -lm
 
 run : main.c

@@ -1,4 +1,13 @@
-compile : calcul.c
-	gcc -I ../../include/calcul_lib/ -I ../../include/struct_lib/ -c *.c
-	mv calcul.o ../main_src/
-	mv dynamicSystems.o ../main_src/
+GCC = gcc
+INCLUDE = -I ../../include/calcul_lib/ -I ../../include/struct_lib/
+OBJ_C = calcul.c dynamicSystems.c
+OBJ_O =  calcul.o dynamicSystems.o
+COMPILE = compile
+
+all : $(COMPILE) $(MOVE)
+
+$(COMPILE) : ${OBJ_C)
+	$(GCC) $(INCLUDE) -c $(OBJ)
+
+$(MOVE) : $(OBJ_O)
+	mv $(OBJ_O) ../main_src/
