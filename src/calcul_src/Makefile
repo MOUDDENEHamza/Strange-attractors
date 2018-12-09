@@ -1,13 +1,12 @@
 GCC = gcc
 INCLUDE = -I ../../include/calcul_lib/ -I ../../include/struct_lib/
-OBJ_C = calcul.c dynamicSystems.c
-OBJ_O =  calcul.o dynamicSystems.o
-COMPILE = compile
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
 
-all : $(COMPILE) $(MOVE)
+all : compile move
 
-$(COMPILE) : ${OBJ_C)
-	$(GCC) $(INCLUDE) -c $(OBJ)
+compile : $(SRC)
+	$(GCC) $(INCLUDE) -c $(SRC)
 
-$(MOVE) : $(OBJ_O)
-	mv $(OBJ_O) ../main_src/
+move : $(OBJ)
+	mv $(OBJ) ../main_src/

@@ -20,29 +20,29 @@ int main(int argc, char *argv[]) {
 	char vector_file[BUFFER];
 	double i = 0;
 
-	/*create and handle the structres*/
+	/*create and handle the structures*/
 	handle_p();
 	handle_para();
 
 	/*ask the user to choose one dynamic system*/
 	launch_programm();
 
-	/*ask user to choose the dynamic system by typing 1 or 2*/
+	/*ask user to choose the dynamic system by typing a number between 1 ad 10*/
 	type_flag(flag);
 
 	/*fix the name file for choosen dynamic system*/
 	f_name(file_name, flag);
 
-	/*display : the init bar with the dynamic system that will be used*/
+	/*display : the init bar with the dynamic system's name that will be used*/
 	display_init(file_name);
 
 	/*ask user if he wants to execute the programm with default setting*/
 	default_parameters(by_default);
 
-	/*input : initial coordinates x, y, z*/
+	/*input : initial coordinates*/
 	coordinates(p->position, flag, by_default);
 
-	/*input : constants σ, ρ, β*/
+	/*input : constants*/
 	constants(para->parameter, flag, by_default);
 
 	/*calculation and display of speed dx dy dz*/
@@ -57,7 +57,7 @@ int main(int argc, char *argv[]) {
 	/*input : break time Tmax*/
 	break_time(&p->tmax, &p->dt, by_default);
 
-	/*display : the coordinates that will be stored in lorenz.dat*/
+	/*display : the coordinates that will be stored in the file*/
 	display_coordinates(p->position, &i, flag);
 
 	/*initialize files, update position, write to file then close it*/
@@ -65,7 +65,7 @@ int main(int argc, char *argv[]) {
 	v_file(file_name, vector_file, flag);
 	file(p->position, p->speed_t, &i, flag, point_file, vector_file);
 
-	/*main loop : calculation of instant speed and coordinates at every t instant, then I write this data into the file*/
+	/*main loop : calculation of instant speed and coordinates at every t instant, then it writes this data into the file*/
 	for (i = p->dt; i <= p->tmax + p->dt; i += p->dt) {
 		/*calcul : the new position at every moment t*/
 		instant_speed(p->speed_t, p->position, para->parameter, &p->dt, flag);
@@ -75,7 +75,7 @@ int main(int argc, char *argv[]) {
 		file(p->position, p->speed_t, &i, flag, point_file, vector_file);
 	}
 
-	/*run : lunch gnuplot from main.c*/
+	/*run : launch gnuplot from main.c*/
 	gnuplot_point(flag, point_file); //draw the curve by displaying only the coordinates
 	gnuplot_vector(flag, vector_file); //draw the curve by displaying only the vectors
 

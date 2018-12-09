@@ -49,7 +49,7 @@ char f_name(char file_name[], char flag[]){
 	return file_name[BUFFER];
 }
 
-/*this function give the name of the dyanmic system choosen and _coordinates.dat to point_file*/
+/*this function give the name of the dynamic system choosen and _coordinates.dat to point_file*/
 void p_file(char file_name[], char point_file[], char flag[]){
 	
 	f_name(file_name, flag);
@@ -58,7 +58,7 @@ void p_file(char file_name[], char point_file[], char flag[]){
 	return;
 }
 
-/*this function give the name of the dyanmic system choosen and _vectors.dat to vector_file*/
+/*this function give the name of the dynamic system choosen and _vectors.dat to vector_file*/
 void v_file(char file_name[], char vector_file[], char flag[]){
         
 	f_name(file_name, flag);

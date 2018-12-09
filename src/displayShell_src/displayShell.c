@@ -2,18 +2,20 @@
 #include "displayShell.h"
 #include "string.h"
 
-/*display : this function initialize and give to user the list of the dyanmic system that he can choose,then ask him to choose one*/
+/*display : this function initialize and give to user the list of the dynamic systems that he can choose,then ask him to choose one*/
 void launch_programm(){
 
 	printf("\n******************************************************\n");
-    printf("\nthere are ten dynamic systems, to execute :\n");
-    printf("\n\tthe Lorenz attractor enter 1.\n");
-    printf("\tthe Euler attractor enter 2.\n");
+	printf("\n\tMODEL THE TRAJECTORY OF A POINT\t\n");
+	printf("\n******************************************************\n");
+	printf("\nthere are ten dynamic systems, to execute :\n");
+ 	printf("\n\tthe Lorenz attractor enter 1.\n");
+ 	printf("\tthe Euler attractor enter 2.\n");
 	printf("\tthe Aizawa attractor enter 3.\n");
 	printf("\tthe Anishchenko - Astakhov attractor enter 4.\n");
 	printf("\tthe Nose - Hoover atractor enter 5.\n");
 	printf("\tthe Rossler atractor enter 6.\n");
-    printf("\tthe coullet atractor enter 7.\n");
+ 	printf("\tthe coullet atractor enter 7.\n");
 	printf("\tthe Hadley atractor enter 8.\n");
 	printf("\tthe Rayleigh - Benard atractor enter 9.\n");
 	printf("\tthe Bouali atractor enter 10.\n");
@@ -35,13 +37,13 @@ void display_speed(double speed[], char flag[]){
 	
 	printf("\n-----------------------speed--------------------\n");
 
-	if (strcmp(flag,"2") != 0){//display the initial speed of all 3D dynamic systeme dx, dy, dz.
+	if (strcmp(flag,"2") != 0){//display the initial speed of all 3D dynamic systems : dx, dy, dz.
 		printf("dx = %lf \n", speed[0]);
 		printf("dy = %lf \n", speed[1]);
 		printf("dz = %lf \n", speed[2]);
 	} 	
 
-	if (strcmp(flag,"2") == 0){//display the initial speed of Euler systeme dβ angular speed, dv linear speed.
+	if (strcmp(flag,"2") == 0){//display the initial speed of Euler system : dβ angular speed, dv linear speed.
 		printf("dβ = %lf \n", speed[0]);
 		printf("dv = %lf \n", speed[1]);
 	}
@@ -51,14 +53,14 @@ void display_speed(double speed[], char flag[]){
 	return;
 }
 
-/*display : display the coordinates directly in the shell*/
+/*display : display the coordinates directly into the shell*/
 void display_coordinates(double position[], double *i, char flag[]){
-	if (strcmp(flag,"2") != 0){//print the coordinates of 3D dynamic system into the shell : time, x, y, z. 
+	if (strcmp(flag,"2") != 0){//print the coordinates of 3D dynamics systems into the shell : time, x, y, z. 
 		printf("time \t\t x \t\t y \t\t z\n");
 		printf("%lf \t %lf \t %lf \t %lf\n", *i, position[0], position[1], position[2]);
 	}
 
-	if (strcmp(flag,"2") == 0){//print the coordinates of Euler system into the shell of time, α, β.	
+	if (strcmp(flag,"2") == 0){//print the coordinates of Euler system into the shell : time, α, β.	
 	printf("time \t\t α \t\t β\n");
         printf("%lf \t %lf \t %lf\n", *i, position[0], position[1]);
 	}

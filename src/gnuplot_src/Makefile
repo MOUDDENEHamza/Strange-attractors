@@ -1,3 +1,12 @@
-compile : gnuplot.c
-	gcc -I ../../include/gnuplot_lib/ -I ../../include/struct_lib/ -c *.c
-	mv gnuplot.o ../main_src/
+GCC = gcc
+INCLUDE = -I ../../include/gnuplot_lib/ -I ../../include/struct_lib/
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
+
+all : compile move
+
+compile : $(SRC)
+	$(GCC) $(INCLUDE) -c $(SRC)
+
+move : $(OBJ)
+	mv $(OBJ) ../main_src/

@@ -86,10 +86,10 @@ void rayleigh_t(double speed_t[], double position[], double parameter[], double 
 /*****************************************************************************************/
 /****************************************BOUALI SYSTEM************************************/
 
-//calculation of initial speed of thomas system.
+//calculation of initial speed of bouali system.
 void bouali_init(double speed[], double position[], double parameter[]);
 
-//calculation of instant speed of thomas system.
+//calculation of instant speed of bouali system.
 void bouali_t(double speed_t[], double position[], double parameter[], double *dt);
 
 /*****************************************************************************************/

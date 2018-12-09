@@ -3,7 +3,7 @@
 
 #include "struct.h"
 
-/*the user has to choose between the different dynamic systeme*/
+/*the user has to choose between the different dynamics systems*/
 void type_flag(char flag[]);
 
 /*ask user if he wants to execute the programm with default settings*/

@@ -5,7 +5,7 @@
 #include "string.h"
 #include "inputSystems.h"
 
-/*the user has to choose between the different dynamic systeme*/
+/*the user has to choose between the differents dynamic systems*/
 void type_flag(char flag[]){
 
 	while(1){
