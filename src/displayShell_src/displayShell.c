@@ -6,17 +6,17 @@
 void launch_programm(){
 
 	printf("\n******************************************************\n");
-        printf("\nthere are seven dynamic systems, to execute :\n");
-        printf("\n\tthe Lorenz attractor enter 1.\n");
-        printf("\tthe Euler attractor enter 2.\n");
+    printf("\nthere are ten dynamic systems, to execute :\n");
+    printf("\n\tthe Lorenz attractor enter 1.\n");
+    printf("\tthe Euler attractor enter 2.\n");
 	printf("\tthe Aizawa attractor enter 3.\n");
 	printf("\tthe Anishchenko - Astakhov attractor enter 4.\n");
 	printf("\tthe Nose - Hoover atractor enter 5.\n");
 	printf("\tthe Rossler atractor enter 6.\n");
-        printf("\tthe coullet atractor enter 7.\n");
+    printf("\tthe coullet atractor enter 7.\n");
 	printf("\tthe Hadley atractor enter 8.\n");
-	printf("\tthe Rayleigh atractor enter 9.\n");
-	printf("\tthe Thomas atractor enter 10.\n");
+	printf("\tthe Rayleigh - Benard atractor enter 9.\n");
+	printf("\tthe Bouali atractor enter 10.\n");
 	printf("\nyou choose : ");
 
 	return;
@@ -69,6 +69,6 @@ void display_coordinates(double position[], double *i, char flag[]){
 /*display : the end bar*/
 void display_end(){
 	printf("\n\t\t\t Goodbye! \n");
-	printf("***************************end**********************************\n");
+	printf("\n***************************end**********************************\n\n");
 	return;
 }

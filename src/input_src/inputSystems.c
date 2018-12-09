@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #include "inputSystems.h"
 #include "string.h"
 
@@ -25,9 +26,9 @@ void lorenz_constants(double parameter[], char by_default[]){
 		parameter[2] = 2.66;
 	}
 
-	else{//manual input : euler.
+	else{//manual input : lorenz.
 		printf("\n---------------------Constants--------------------\n");
-		printf("enter σ : ");
+				printf("enter σ : ");
                 scanf("%lf", &parameter[0]);
                 printf("tenter ρ : ");
                 scanf("%lf", &parameter[1]);
@@ -169,7 +170,7 @@ void hoover_coordinates(double position[]){
 	return;
 }
 
-//input constants of anishchenko dynamic system.
+//input constants of hoover dynamic system.
 void hoover_constants(double parameter[], char by_default[]){
 
         if (strcmp(by_default,"yes") == 0){//automatic input : hoover.
@@ -214,9 +215,9 @@ void rossler_constants(double parameter[], char by_default[]){
                 printf("\n---------------------Constants--------------------\n");
                 printf("enter α : ");
                 scanf("%lf", &parameter[0]);
-		printf("enter β : ");
+                printf("enter β : ");
                 scanf("%lf", &parameter[1]);
-		printf("enter ζ : ");
+                printf("enter ζ : ");
                 scanf("%lf", &parameter[2]);
                 printf("------------------------------------------------------\n");
         }
@@ -256,7 +257,7 @@ void coullet_constants(double parameter[], char by_default[]){
                 scanf("%lf", &parameter[1]);
                 printf("enter ζ : ");
                 scanf("%lf", &parameter[2]);
-		printf("enter δ : ");
+                printf("enter δ : ");
                 scanf("%lf", &parameter[3]);
                 printf("------------------------------------------------------\n");
         }
@@ -272,8 +273,8 @@ void coullet_constants(double parameter[], char by_default[]){
 void hadley_coordinates(double position[]){
 
 	position[0] = 1;
-	position[1] = 2;
-	position[2] = 3;
+	position[1] = 1;
+	position[2] = 1;
 
 	return;
 }
@@ -310,9 +311,9 @@ void hadley_constants(double parameter[], char by_default[]){
 //input initial coordinates of rayleigh dynamic system.
 void rayleigh_coordinates(double position[]){
 
-	position[0] = 1;
-	position[1] = 2;
-	position[2] = 3;
+	position[0] = 0.1;
+	position[1] = 0.1;
+	position[2] = 0.1;
 
 	return;
 }
@@ -341,29 +342,32 @@ void rayleigh_constants(double parameter[], char by_default[]){
 }
 
 /*****************************************************************************************/
-/****************************************THOMAS SYSTEM************************************/
+/****************************************BOUALI SYSTEM************************************/
 
-//input initial coordinates of thomas dynamic system.
-void thomas_coordinates(double position[]){
+//input initial coordinates of bouali dynamic system.
+void bouali_coordinates(double position[]){
 
-	position[0] = 1;
-	position[1] = 2;
-	position[2] = 3;
+	position[0] = 0.1;
+	position[1] = 1;
+	position[2] = 0.1;
 
 	return;
 }
 
-//input constants of thomas dynamic system.
-void thomas_constants(double parameter[], char by_default[]){
+//input constants of bouali dynamic system.
+void bouali_constants(double parameter[], char by_default[]){
 
-	if (strcmp(by_default,"yes") == 0){//automatic input : thomas.
-		parameter[0] = 0.19;
+	if (strcmp(by_default,"yes") == 0){//automatic input : bouali.
+		parameter[0] = 0.3;
+		parameter[1] = 1;
 	}
 
-	else{//manual input : thomas.
+	else{//manual input : bouali.
 		printf("\n---------------------Constants--------------------\n");
-		printf("enter β : ");
+		printf("enter α : ");
 		scanf("%lf", &parameter[0]);
+		printf("enter ζ : ");
+		scanf("%lf", &parameter[1]);
 		printf("------------------------------------------------------\n");
 	}
 

@@ -177,9 +177,9 @@ void coullet_t(double speed_t[], double position[], double parameter[], double *
 //calculation of initial speed of hadley system
 void hadley_init(double speed[], double position[], double parameter[]){
 
-        speed[0] = - pow(position[1], 2) - pow(position[2], 2) - parameter[0] * position[0] + parameter[0] * parameter[2];
-	speed[1] = position[0] * position[1] - parameter[1] * position[2] * position[0] -  position[1] + parameter[3];
-	speed[2] = parameter[1] * position[0] * position[1] + position[0] * position[2] - position[2];
+	speed[0] = position[1] * position[0] - parameter[1] * position[2] * position[1] -  position[0] + parameter[3];
+	speed[1] = - pow(position[0], 2) - pow(position[2], 2) - parameter[0] * position[1] + parameter[0] * parameter[2];
+	speed[2] = parameter[1] * position[1] * position[0] + position[0] * position[2] - position[2];
                                 
 	return;
 }
@@ -187,8 +187,8 @@ void hadley_init(double speed[], double position[], double parameter[]){
 //calculation of instant speed of hadley system
 void hadley_t(double speed_t[], double position[], double parameter[], double *dt){
 
-	speed_t[0] = position[0] + (-pow(position[1], 2) - pow(position[2], 2) - parameter[0] * position[0] + parameter[0] * parameter[2]) * (*dt);
-	speed_t[1] = position[1] + (position[0] * position[1] - parameter[1] * position[2] * position[0] - position[1] + parameter[3]) * (*dt);
+	speed_t[0] = position[0] + (position[1] * position[0] - parameter[1] * position[2] * position[1] - position[0] + parameter[3]) * (*dt);
+	speed_t[1] = position[1] + (-pow(position[0], 2) - pow(position[2], 2) - parameter[0] * position[1] + parameter[0] * parameter[2]) * (*dt);
 	speed_t[2] = position[2] + (parameter[1] * position[0] * position[1] + position[0] * position[2] - position[2]) * (*dt);
 
 	return;
@@ -200,7 +200,7 @@ void hadley_t(double speed_t[], double position[], double parameter[], double *d
 //calculation of initial speed of rayleigh system
 void rayleigh_init(double speed[], double position[], double parameter[]){
 
-	speed[0] = -position[0] * parameter[0] + parameter[0] * position[1];
+	speed[0] = -parameter[0] * position[0] + parameter[0] * position[1];
 	speed[1] = parameter[1] * position[0] - position[1] - position[0] * position[2];
 	speed[2] = position[0] * position[1] - parameter[2] * position[2];
 
@@ -210,31 +210,31 @@ void rayleigh_init(double speed[], double position[], double parameter[]){
 //calculation of instant speed of rayleigh system
 void rayleigh_t(double speed_t[], double position[], double parameter[], double *dt){
 
-	speed_t[0] = position[0] + (-position[0] * parameter[0] + parameter[0] * position[1]) * (*dt);
+	speed_t[0] = position[0] + (-parameter[0] * position[0] + parameter[0] * position[1]) * (*dt);
 	speed_t[1] = position[1] + (parameter[1] * position[0] - position[1] - position[0] * position[2]) * (*dt);
 	speed_t[2] = position[2] + (position[0] * position[1] - parameter[2] * position[2]) * (*dt);
 
 	return;
 }
 /*****************************************************************************************/
-/**************************************THOMAS SYSTEM**************************************/
+/**************************************BOUALI SYSTEM**************************************/
 
-//calculation of initial speed of thomas system
-void thomas_init(double speed[], double position[], double parameter[]){
+//calculation of initial speed of bouali system
+void bouali_init(double speed[], double position[], double parameter[]){
 
-	speed[0] = - parameter[0] * position[0] + sin(position[1]);
-	speed[1] = - parameter[0] * position[1] + sin(position[2]);
-	speed[2] = - parameter[0] * position[2] + sin(position[0]);
+	speed[0] = position[0] * (4 - position[1]) + parameter[0] * position[2];
+	speed[1] = -position[1] * (1 - pow(position[0], 2));
+	speed[2] = -position[0] * (1.5 - parameter[1] * position[2]) - 0.05 * position[2];
 
 	return;
 }
 
-//calculation of instant speed of thomas system
-void thomas_t(double speed_t[], double position[], double parameter[], double *dt){
+//calculation of instant speed of bouali system
+void bouali_t(double speed_t[], double position[], double parameter[], double *dt){
 
-	speed_t[0] = position[0] + (-parameter[0] * position[0] + sin(position[1])) * (*dt);
-	speed_t[1] = position[1] + (- parameter[0] * position[1] + sin(position[2])) * (*dt);
-	speed_t[2] = position[2] + (- parameter[0] * position[2] + sin(position[0])) * (*dt);
+	speed_t[0] = position[0] + (position[0] * (4 - position[1]) + parameter[0] * position[2]) * (*dt);
+	speed_t[1] = position[1] + (-position[1] * (1 - pow(position[0], 2))) * (*dt);
+	speed_t[2] = position[2] + (-position[0] * (1.5 - parameter[1] * position[2]) - 0.05 * position[2]) * (*dt);
 
 	return;
 }

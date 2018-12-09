@@ -28,7 +28,7 @@ char f_name(char file_name[], char flag[]){
         }
 	
 	if (strcmp(flag, "6") == 0){//file name : Rossler.
-                strcpy(file_name, "hoover");
+                strcpy(file_name, "rossler");
         }
 	
 	if (strcmp(flag, "7") == 0){//file name : coullet.
@@ -43,8 +43,8 @@ char f_name(char file_name[], char flag[]){
 		strcpy(file_name, "rayleigh");
 	}
 
-	if (strcmp(flag, "10") == 0){//file name : thomas.
-		strcpy(file_name, "thomas");
+	if (strcmp(flag, "10") == 0){//file name : bouali.
+		strcpy(file_name, "bouali");
 	}
 	return file_name[BUFFER];
 }

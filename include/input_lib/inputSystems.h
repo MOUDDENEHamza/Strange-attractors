@@ -86,13 +86,13 @@ void rayleigh_coordinates(double position[]);
 void rayleigh_constants(double parameter[], char by_default[]);
 
 /*****************************************************************************************/
-/*****************************************THOMAS SYSTEM***********************************/
+/*****************************************BOUALI SYSTEM***********************************/
 
-//input initial coordinates of thomas system.
-void thomas_coordinates(double position[]);
+//input initial coordinates of bouali system.
+void bouali_coordinates(double position[]);
 
-//input constants of thomas dynamic system.
-void thomas_constants(double parameter[], char by_default[]);
+//input constants of bouali dynamic system.
+void bouali_constants(double parameter[], char by_default[]);
 
 /*****************************************************************************************/
 

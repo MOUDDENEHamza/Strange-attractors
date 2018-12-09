@@ -16,9 +16,9 @@ void coordinates(double position[], char flag[], char by_default[]);
 void constants(double parameter[], char flag[], char by_default[]);
 
 /*input : increment dt*/
-void increment(double *dt);
+void increment(double *dt, char by_default[]);
 
 /*input : break time Tmax*/
-void break_time(double *tmax, double *dt);
+void break_time(double *tmax, double *dt, char by_default[]);
 
 #endif
