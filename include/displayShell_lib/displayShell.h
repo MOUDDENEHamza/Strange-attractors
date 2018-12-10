@@ -13,7 +13,7 @@ void display_init(char file_name[]);
 void display_speed(double speed[], char flag[]);
 
 /*display : display the coordinates directly into the shell*/
-void display_coordinates(double position[],double *i, char flag[]);
+void display_coordinates(double position[], double *i, char flag[]);
 
 /*display : the end bar*/
 void display_end();

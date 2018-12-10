@@ -14,7 +14,6 @@ all :
 	make run -s
 
 build : 
-	
 	cd ../calcul_src/ && $(MAKE)
 	cd ../displayShell_src && $(MAKE)
 	cd ../file_src/ && $(MAKE)

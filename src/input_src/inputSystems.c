@@ -1,159 +1,159 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-#include <math.h>
 #include "inputSystems.h"
-#include "string.h"
+
+#define BLUE "\x1B[34m"
+#define RESET "\x1B[0m"
 
 /**************************************LORENZ SYSTEM**************************************/
 
 //input initial coordinates of lorenz dynamic system.
-void lorenz_coordinates(double position[]){
+void lorenz_coordinates(double position[]) {
 
- 	position[0] = 1;
-	position[1] = 2;
-	position[2] = 3;
-          
-	return;
+    position[0] = 1;
+    position[1] = 2;
+    position[2] = 3;
+
+    return;
 }
 
 //input constants of lorenz dynamic system.
-void lorenz_constants(double parameter[], char by_default[]){
-	
-	if (strcmp(by_default,"yes") == 0){//automatic input : lorenz.
-		parameter[0] = 10;
-		parameter[1] = 28;
-		parameter[2] = 2.66;
-	}
+void lorenz_constants(double parameter[], char by_default[]) {
 
-	else{//manual input : lorenz.
-		printf("\n---------------------Constants--------------------\n");
-				printf("enter σ : ");
-                scanf("%lf", &parameter[0]);
-                printf("tenter ρ : ");
-                scanf("%lf", &parameter[1]);
-                printf("enter β : ");
-                scanf("%lf", &parameter[2]);
-                printf("------------------------------------------------------\n");
-	}
+    if (strcmp(by_default, "yes") == 0) {//automatic input : lorenz.
+        parameter[0] = 10;
+        parameter[1] = 28;
+        parameter[2] = 2.66;
+    }
 
-	return;
+    else {//manual input : lorenz.
+    	printf("\n---------------------"BLUE"CONSTANTS"RESET"------------------------\n");
+        printf("enter σ : ");
+        scanf("%lf", &parameter[0]);
+        printf("tenter ρ : ");
+        scanf("%lf", &parameter[1]);
+        printf("enter β : ");
+        scanf("%lf", &parameter[2]);
+	printf("------------------------------------------------------\n");
+    }
+
+    return;
 }
 
 /*****************************************************************************************/
 /***************************************EULER SYSTEM**************************************/
 
 //input initial coordinates of euler dynamic system.
-void euler_coordinates(double position[]){
+void euler_coordinates(double position[]) {
 
-	position[0] = 0;
-	position[1] = 2;
+    position[0] = 0;
+    position[1] = 2;
 
-       return;
+    return;
 }
 
 //input constants of euler dynamic system.
-void euler_constants(double parameter[], char by_default[]){
-	
-	if (strcmp(by_default,"yes") == 0){//automatic input : euler.
-		parameter[0] = 1;
-		parameter[1] = 1;
-		parameter[2] = 0.2;
-		parameter[3] = 1;
-	}
+void euler_constants(double parameter[], char by_default[]) {
 
-	else{//manual input : euler.
-                printf("\n---------------------Constants--------------------\n");
-                printf("enter g : ");
-                scanf("%lf", &parameter[0]);
-                printf("enter l : ");
-                scanf("%lf", &parameter[1]);
-                printf("enter γ : ");
-                scanf("%lf", &parameter[2]);
-                printf("enter m : ");
-                scanf("%lf", &parameter[3]);
-                printf("------------------------------------------------------\n");
-	}
+    if (strcmp(by_default, "yes") == 0) {//automatic input : euler.
+        parameter[0] = 1;
+        parameter[1] = 1;
+        parameter[2] = 0.2;
+        parameter[3] = 1;
+    }
 
-	return;
+    else {//manual input : euler.
+    	printf("\n---------------------"BLUE"CONSTANTS"RESET"------------------------\n");
+        printf("enter g : ");
+        scanf("%lf", &parameter[0]);
+        printf("enter l : ");
+        scanf("%lf", &parameter[1]);
+        printf("enter γ : ");
+        scanf("%lf", &parameter[2]);
+        printf("enter m : ");
+        scanf("%lf", &parameter[3]);
+	printf("------------------------------------------------------\n");
+    }
+
+    return;
 }
 
 /*****************************************************************************************/
 /****************************************AIZAWA SYSTEM************************************/
 
 //input initial coordinates of aizawa dynamic system.
-void aizawa_coordinates(double position[]){
-        
-	position[0] = 0.1;
-	position[1] = 0;
-	position[2] = 0;
+void aizawa_coordinates(double position[]) {
 
-	return;
+    position[0] = 0.1;
+    position[1] = 0;
+    position[2] = 0;
+
+    return;
 }
 
 //input constants of aizawa dynamic system.
-void aizawa_constants(double parameter[], char by_default[]){
-	
-	if (strcmp(by_default,"yes") == 0){//automatic input : aizawa.
-		parameter[0] = 0.95;
-		parameter[1] = 0.7;
-		parameter[2] = 0.6;
-		parameter[3] = 3.5;
-		parameter[4] = 0.25; 
-		parameter[5] = 0.1;
-	}
+void aizawa_constants(double parameter[], char by_default[]) {
 
-	else{//manual input : aizawa.
-                printf("\n---------------------Constants--------------------\n");
-                printf("enter a : ");
-                scanf("%lf", &parameter[0]);
-                printf("enter b : ");
-                scanf("%lf", &parameter[1]);
-                printf("enter c : ");
-                scanf("%lf", &parameter[2]);
-                printf("enter d : ");
-                scanf("%lf", &parameter[3]);
-                printf("enter e : ");
-                scanf("%lf", &parameter[4]);
-                printf("enter f : ");
-                scanf("%lf", &parameter[5]);
-                printf("------------------------------------------------------\n");
-	}
+    if (strcmp(by_default, "yes") == 0) {//automatic input : aizawa.
+        parameter[0] = 0.95;
+        parameter[1] = 0.7;
+        parameter[2] = 0.6;
+        parameter[3] = 3.5;
+        parameter[4] = 0.25;
+        parameter[5] = 0.1;
+    }
 
-	return;
+    else {//manual input : aizawa.
+    	printf("\n---------------------"BLUE"CONSTANTS"RESET"------------------------\n");
+        printf("enter a : ");
+        scanf("%lf", &parameter[0]);
+        printf("enter b : ");
+        scanf("%lf", &parameter[1]);
+        printf("enter c : ");
+        scanf("%lf", &parameter[2]);
+        printf("enter d : ");
+        scanf("%lf", &parameter[3]);
+        printf("enter e : ");
+        scanf("%lf", &parameter[4]);
+        printf("enter f : ");
+        scanf("%lf", &parameter[5]);
+	printf("------------------------------------------------------\n");
+    }
+
+    return;
 }
 
 /*****************************************************************************************/
 /****************************************ANISHCHENKO SYSTEM*******************************/
 
 //input initial coordinates of anishchenko system.
-void anishchenko_coordinates(double position[]){
-        
-	position[0] = 1;
-	position[1] = 2;
-	position[2] = 3;
+void anishchenko_coordinates(double position[]) {
 
-	return;
+    position[0] = 1;
+    position[1] = 2;
+    position[2] = 3;
+
+    return;
 }
 
 //input constants of anishchenko dynamic system.
-void anishchenko_constants(double parameter[], char by_default[]){
-	
-	if (strcmp(by_default,"yes") == 0){//automatic input : anishchenko.
-                        parameter[0] = 1.2;
-                        parameter[1] = 0.5;
-	}
+void anishchenko_constants(double parameter[], char by_default[]) {
 
-	else{//manual input : anishchenko.
-                printf("\n---------------------Constants--------------------\n");
-                printf("enter µ : ");
-                scanf("%lf", &parameter[0]);
-                printf("enter η : ");
-                scanf("%lf", &parameter[1]);
-                printf("------------------------------------------------------\n");
-	}
+    if (strcmp(by_default, "yes") == 0) {//automatic input : anishchenko.
+        parameter[0] = 1.2;
+        parameter[1] = 0.5;
+    }
 
-	return;
+    else {//manual input : anishchenko.
+    	printf("\n---------------------"BLUE"CONSTANTS"RESET"------------------------\n");
+        printf("enter µ : ");
+        scanf("%lf", &parameter[0]);
+        printf("enter η : ");
+        scanf("%lf", &parameter[1]);
+	printf("------------------------------------------------------\n");
+    }
+
+    return;
 }
 
 /*****************************************************************************************/
@@ -161,218 +161,214 @@ void anishchenko_constants(double parameter[], char by_default[]){
 
 
 //input initial coordinates of hoover system.
-void hoover_coordinates(double position[]){
+void hoover_coordinates(double position[]) {
 
-	position[0] = 1;
-        position[1] = 2;
-        position[2] = 3;
+    position[0] = 1;
+    position[1] = 2;
+    position[2] = 3;
 
-	return;
+    return;
 }
 
 //input constants of hoover dynamic system.
-void hoover_constants(double parameter[], char by_default[]){
+void hoover_constants(double parameter[], char by_default[]) {
 
-        if (strcmp(by_default,"yes") == 0){//automatic input : hoover.
-                        parameter[0] = 1.5;
-        }
+    if (strcmp(by_default, "yes") == 0) {//automatic input : hoover.
+        parameter[0] = 1.5;
+    }
 
-        else{//manual input : hoover.
-                printf("\n---------------------Constants--------------------\n");
-                printf("enter α : ");
-                scanf("%lf", &parameter[0]);
-                printf("------------------------------------------------------\n");
-        }
+    else {//manual input : hoover.
+    	printf("\n---------------------"BLUE"CONSTANTS"RESET"------------------------\n");
+        printf("enter α : ");
+        scanf("%lf", &parameter[0]);
+	printf("------------------------------------------------------\n");
+    }
 
-        return;
+    return;
 }
-
 
 /*****************************************************************************************/
 /****************************************ROSSLER SYSTEM************************************/
 
 
 //input initial coordinates of rossler system.
-void rossler_coordinates(double position[]){
+void rossler_coordinates(double position[]) {
 
-        position[0] = 1;
-        position[1] = 2;
-        position[2] = 3;
+    position[0] = 1;
+    position[1] = 2;
+    position[2] = 3;
 
-        return;
+    return;
 }
 
 //input constants of rossler dynamic system.
-void rossler_constants(double parameter[], char by_default[]){
+void rossler_constants(double parameter[], char by_default[]) {
 
-        if (strcmp(by_default,"yes") == 0){//automatic input : rossler.
-                        parameter[0] = 0.2;
-			parameter[1] = 0.2;
-			parameter[2] = 5.7;
-        }
+    if (strcmp(by_default, "yes") == 0) {//automatic input : rossler.
+        parameter[0] = 0.2;
+        parameter[1] = 0.2;
+        parameter[2] = 5.7;
+    }
 
-        else{//manual input : rossler.
-                printf("\n---------------------Constants--------------------\n");
-                printf("enter α : ");
-                scanf("%lf", &parameter[0]);
-                printf("enter β : ");
-                scanf("%lf", &parameter[1]);
-                printf("enter ζ : ");
-                scanf("%lf", &parameter[2]);
-                printf("------------------------------------------------------\n");
-        }
+    else {//manual input : rossler.
+    	printf("\n---------------------"BLUE"CONSTANTS"RESET"------------------------\n");
+        printf("enter α : ");
+        scanf("%lf", &parameter[0]);
+        printf("enter β : ");
+        scanf("%lf", &parameter[1]);
+        printf("enter ζ : ");
+        scanf("%lf", &parameter[2]);
+	printf("------------------------------------------------------\n");
+    }
 
-        return;
+    return;
 }
-
 
 /*****************************************************************************************/
 /****************************************COULLET SYSTEM************************************/
 
 //input initial coordinates of coullet system.
-void coullet_coordinates(double position[]){
+void coullet_coordinates(double position[]) {
 
-        position[0] = 0.1;
-        position[1] = 0.2;
-        position[2] = 0.3;
+    position[0] = 0.1;
+    position[1] = 0.2;
+    position[2] = 0.3;
 
-        return;
+    return;
 }
 
 //input constants of coullet dynamic system.
-void coullet_constants(double parameter[], char by_default[]){
+void coullet_constants(double parameter[], char by_default[]) {
 
-        if (strcmp(by_default,"yes") == 0){//automatic input : coullet.
-                        parameter[0] = 0.8;
-                        parameter[1] = -1.1;
-                        parameter[2] = -0.45;
-			parameter[3] = -1;
-        }
+    if (strcmp(by_default, "yes") == 0) {//automatic input : coullet.
+        parameter[0] = 0.8;
+        parameter[1] = -1.1;
+        parameter[2] = -0.45;
+        parameter[3] = -1;
+    }
 
-        else{//manual input : coullet.
-                printf("\n---------------------Constants--------------------\n");
-                printf("enter α : ");
-                scanf("%lf", &parameter[0]);
-                printf("enter β : ");
-                scanf("%lf", &parameter[1]);
-                printf("enter ζ : ");
-                scanf("%lf", &parameter[2]);
-                printf("enter δ : ");
-                scanf("%lf", &parameter[3]);
-                printf("------------------------------------------------------\n");
-        }
+    else {//manual input : coullet.
+    	printf("\n---------------------"BLUE"CONSTANTS"RESET"------------------------\n");
+        printf("enter α : ");
+        scanf("%lf", &parameter[0]);
+        printf("enter β : ");
+        scanf("%lf", &parameter[1]);
+        printf("enter ζ : ");
+        scanf("%lf", &parameter[2]);
+        printf("enter δ : ");
+        scanf("%lf", &parameter[3]);
+	printf("------------------------------------------------------\n");
+    }
 
-        return;
+    return;
 }
-
 
 /*****************************************************************************************/
 /****************************************HADLEY SYSTEM************************************/
 
 //input initial coordinates of hadley dynamic system.
-void hadley_coordinates(double position[]){
+void hadley_coordinates(double position[]) {
 
-	position[0] = 1;
-	position[1] = 1;
-	position[2] = 1;
+    position[0] = 1;
+    position[1] = 1;
+    position[2] = 1;
 
-	return;
+    return;
 }
 
 //input constants of hadley dynamic system.
-void hadley_constants(double parameter[], char by_default[]){
+void hadley_constants(double parameter[], char by_default[]) {
 
-	if (strcmp(by_default,"yes") == 0){//automatic input : hadley.
-		parameter[0] = 0.2;
-		parameter[1] = 4;
-		parameter[2] = 8;
-		parameter[3] = 1;
-	}
+    if (strcmp(by_default, "yes") == 0) {//automatic input : hadley.
+        parameter[0] = 0.2;
+        parameter[1] = 4;
+        parameter[2] = 8;
+        parameter[3] = 1;
+    }
 
-	else{//manual input : hadley.
-		printf("\n---------------------Constants--------------------\n");
-		printf("enter α : ");
-		scanf("%lf", &parameter[0]);
-		printf("enter β : ");
-		scanf("%lf", &parameter[1]);
-		printf("enter ζ : ");
-		scanf("%lf", &parameter[2]);
-		printf("enter δ : ");
-		scanf("%lf", &parameter[3]);
-		printf("------------------------------------------------------\n");
-	}
+    else {//manual input : hadley.
+    	printf("\n---------------------"BLUE"CONSTANTS"RESET"------------------------\n");
+        printf("enter α : ");
+        scanf("%lf", &parameter[0]);
+        printf("enter β : ");
+        scanf("%lf", &parameter[1]);
+        printf("enter ζ : ");
+        scanf("%lf", &parameter[2]);
+        printf("enter δ : ");
+        scanf("%lf", &parameter[3]);
+	printf("------------------------------------------------------\n");
+    }
 
-	return;
+    return;
 }
 
 /*****************************************************************************************/
 /****************************************RAYLEIGH SYSTEM************************************/
 
 //input initial coordinates of rayleigh dynamic system.
-void rayleigh_coordinates(double position[]){
+void rayleigh_coordinates(double position[]) {
 
-	position[0] = 0.1;
-	position[1] = 0.1;
-	position[2] = 0.1;
+    position[0] = 0.1;
+    position[1] = 0.1;
+    position[2] = 0.1;
 
-	return;
+    return;
 }
 
 //input constants of rayleigh dynamic system.
-void rayleigh_constants(double parameter[], char by_default[]){
+void rayleigh_constants(double parameter[], char by_default[]) {
 
-	if (strcmp(by_default,"yes") == 0){//automatic input : rayleigh.
-		parameter[0] = 9;
-		parameter[1] = 12;
-		parameter[2] = 5;
-	}
+    if (strcmp(by_default, "yes") == 0) {//automatic input : rayleigh.
+        parameter[0] = 9;
+        parameter[1] = 12;
+        parameter[2] = 5;
+    }
 
-	else{//manual input : rayleigh.
-		printf("\n---------------------Constants--------------------\n");
-		printf("enter α : ");
-		scanf("%lf", &parameter[0]);
-		printf("enter r : ");
-		scanf("%lf", &parameter[1]);
-		printf("enter β : ");
-		scanf("%lf", &parameter[2]);
-		printf("------------------------------------------------------\n");
-	}
+    else {//manual input : rayleigh.
+    	printf("\n---------------------"BLUE"CONSTANTS"RESET"------------------------\n");
+        printf("enter α : ");
+        scanf("%lf", &parameter[0]);
+        printf("enter r : ");
+        scanf("%lf", &parameter[1]);
+        printf("enter β : ");
+        scanf("%lf", &parameter[2]);
+	printf("------------------------------------------------------\n");
+    }
 
-	return;
+    return;
 }
 
 /*****************************************************************************************/
 /****************************************BOUALI SYSTEM************************************/
 
 //input initial coordinates of bouali dynamic system.
-void bouali_coordinates(double position[]){
+void bouali_coordinates(double position[]) {
 
-	position[0] = 0.1;
-	position[1] = 1;
-	position[2] = 0.1;
+    position[0] = 0.1;
+    position[1] = 1;
+    position[2] = 0.1;
 
-	return;
+    return;
 }
 
 //input constants of bouali dynamic system.
-void bouali_constants(double parameter[], char by_default[]){
+void bouali_constants(double parameter[], char by_default[]) {
 
-	if (strcmp(by_default,"yes") == 0){//automatic input : bouali.
-		parameter[0] = 0.3;
-		parameter[1] = 1;
-	}
+    if (strcmp(by_default, "yes") == 0) {//automatic input : bouali.
+        parameter[0] = 0.3;
+        parameter[1] = 1;
+    }
 
-	else{//manual input : bouali.
-		printf("\n---------------------Constants--------------------\n");
-		printf("enter α : ");
-		scanf("%lf", &parameter[0]);
-		printf("enter ζ : ");
-		scanf("%lf", &parameter[1]);
-		printf("------------------------------------------------------\n");
-	}
+    else {//manual input : bouali.
+    	printf("\n---------------------"BLUE"CONSTANTS"RESET"------------------------\n");
+        printf("enter α : ");
+        scanf("%lf", &parameter[0]);
+        printf("enter ζ : ");
+        scanf("%lf", &parameter[1]);
+	printf("------------------------------------------------------\n");
+    }
 
-	return;
+    return;
 }
 
 /*****************************************************************************************/
-

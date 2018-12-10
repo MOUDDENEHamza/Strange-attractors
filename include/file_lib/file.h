@@ -7,7 +7,7 @@
 char f_name(char file_name[], char flag[]);
 
 /*this function give the name of the dyanmic system choosen and _coordinates.dat to point_file*/
-void p_file(char file_name[], char point_file[], char flag[]); 
+void p_file(char file_name[], char point_file[], char flag[]);
 
 /*this function give the name of the dyanmic system choosen and _vectors.dat to vector_file*/
 void v_file(char file_name[], char vector_file[], char flag[]);
